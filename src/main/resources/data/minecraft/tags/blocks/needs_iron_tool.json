@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "Brass_geodes:budding_diamond",
+    "Brass_geodes:budding_emerald",
+    "Brass_geodes:budding_ruby",
+    "Brass_geodes:budding_sapphire",
+    "Brass_geodes:budding_topaz",
+
+    "Brass_geodes:geode_diamond",
+    "Brass_geodes:geode_emerald",
+    "Brass_geodes:geode_ruby",
+    "Brass_geodes:geode_sapphire",
+    "Brass_geodes:geode_topaz",
+
+    "Brass_geodes:amethyst_block",
+    "Brass_geodes:ruby_block",
+    "Brass_geodes:sapphire_block",
+    "Brass_geodes:topaz_block"
+  ]
+}

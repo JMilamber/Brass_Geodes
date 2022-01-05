@@ -1,0 +1,11 @@
+  {
+  "parent": "brass_geodes:item/sapphire_bud",
+  "textures": {
+    "layer0": "brass_geodes:block/large_sapphire_bud"
+  },
+  "display": {
+    "fixed": {
+      "translation": [ 0, 4, 0 ]
+    }
+  }
+}

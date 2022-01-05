@@ -1,0 +1,11 @@
+  {
+  "parent": "brass_geodes:item/emerald_bud",
+  "textures": {
+    "layer0": "brass_geodes:block/medium_emerald_bud"
+  },
+  "display": {
+    "fixed": {
+      "translation": [ 0, 6, 0 ]
+    }
+  }
+}

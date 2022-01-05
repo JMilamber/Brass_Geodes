@@ -1,0 +1,49 @@
+{
+  // Items
+  "item.brass_geodes.pearl": "Pearl",
+  "item.brass_geodes.ruby" : "Ruby",
+  "item.brass_geodes.sapphire": "Sapphire",
+  "item.brass_geodes.topaz": "Topaz",
+
+  // Blocks
+  "block.brass_geodes.amethyst_block" : "Amethyst Block",
+  "block.brass_geodes.ruby_block" : "Ruby Block",
+  "block.brass_geodes.sapphire_block": "Sapphire Block",
+  "block.brass_geodes.topaz_block": "Topaz Block ",
+
+  "block.brass_geodes.budding_diamond": "Budding Diamond",
+  "block.brass_geodes.budding_emerald": "Budding Emerald",
+  "block.brass_geodes.budding_ruby" : "Budding Ruby",
+  "block.brass_geodes.budding_sapphire": "Budding Sapphire",
+  "block.brass_geodes.budding_topaz": "Budding Topaz",
+
+  "block.brass_geodes.geode_diamond": "Raw Diamond Block",
+  "block.brass_geodes.geode_emerald": "Raw Emerald Block",
+  "block.brass_geodes.geode_ruby" : "Raw Ruby Block",
+  "block.brass_geodes.geode_sapphire": "Raw Sapphire Block",
+  "block.brass_geodes.geode_topaz": "Raw Topaz Block",
+
+  "block.brass_geodes.diamond_cluster": "Diamond Cluster",
+  "block.brass_geodes.emerald_cluster": "Emerald Cluster",
+  "block.brass_geodes.ruby_cluster" : "Ruby Cluster",
+  "block.brass_geodes.sapphire_cluster": "Sapphire Cluster",
+  "block.brass_geodes.topaz_cluster": "Topaz Cluster",
+
+  "block.brass_geodes.large_diamond_bud": "Large Diamond Bud",
+  "block.brass_geodes.large_emerald_bud": "Large Emerald Bud",
+  "block.brass_geodes.large_ruby_bud" : "Large Ruby Bud",
+  "block.brass_geodes.large_sapphire_bud": "Large Sapphire Bud",
+  "block.brass_geodes.large_topaz_bud": "Large Topaz Bud",
+
+  "block.brass_geodes.medium_diamond_bud": "Medium Diamond Bud",
+  "block.brass_geodes.medium_emerald_bud": "Medium Emerald Bud",
+  "block.brass_geodes.medium_ruby_bud" : "Medium Ruby Bud",
+  "block.brass_geodes.medium_sapphire_bud": "Medium Sapphire Bud",
+  "block.brass_geodes.medium_topaz_bud": "Medium Topaz Bud",
+
+  "block.brass_geodes.small_diamond_bud": "Small Diamond Bud",
+  "block.brass_geodes.small_emerald_bud": "Small Emerald Bud",
+  "block.brass_geodes.small_ruby_bud" : "Small Ruby Bud",
+  "block.brass_geodes.small_sapphire_bud": "Small Sapphire Bud",
+  "block.brass_geodes.small_topaz_bud": "Small Topaz Bud"
+}
