@@ -1,21 +1,21 @@
 {
   "replace": false,
   "values": [
-    "Brass_geodes:budding_diamond",
-    "Brass_geodes:budding_emerald",
-    "Brass_geodes:budding_ruby",
-    "Brass_geodes:budding_sapphire",
-    "Brass_geodes:budding_topaz",
+    "brass_geodes:budding_diamond",
+    "brass_geodes:budding_emerald",
+    "brass_geodes:budding_ruby",
+    "brass_geodes:budding_sapphire",
+    "brass_geodes:budding_topaz",
 
-    "Brass_geodes:geode_diamond",
-    "Brass_geodes:geode_emerald",
-    "Brass_geodes:geode_ruby",
-    "Brass_geodes:geode_sapphire",
-    "Brass_geodes:geode_topaz",
+    "brass_geodes:geode_diamond",
+    "brass_geodes:geode_emerald",
+    "brass_geodes:geode_ruby",
+    "brass_geodes:geode_sapphire",
+    "brass_geodes:geode_topaz",
 
-    "Brass_geodes:amethyst_block",
-    "Brass_geodes:ruby_block",
-    "Brass_geodes:sapphire_block",
-    "Brass_geodes:topaz_block"
+    "brass_geodes:amethyst_block",
+    "brass_geodes:ruby_block",
+    "brass_geodes:sapphire_block",
+    "brass_geodes:topaz_block"
   ]
 }

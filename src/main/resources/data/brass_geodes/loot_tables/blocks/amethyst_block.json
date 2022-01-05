@@ -4,11 +4,10 @@
     {
       "name": "brass_geodes:geodepool",
       "rolls": 1.0,
-      "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "brass_geodes:topaz_block"
+          "name": "brass_geodes:amethyst_block"
         }
       ],
       "conditions": [
