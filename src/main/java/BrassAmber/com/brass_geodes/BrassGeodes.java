@@ -1,8 +1,6 @@
 package BrassAmber.com.brass_geodes;
 
-import BrassAmber.com.brass_geodes.block.BrassGeodesBlocks;
 import BrassAmber.com.brass_geodes.client.BrassGeodesBlockRender;
-import BrassAmber.com.brass_geodes.item.BrassGeodesItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -19,7 +17,7 @@ import org.apache.logging.log4j.Logger;
 public class BrassGeodes {
     public static final String MOD_ID = "brass_geodes";
     // Directly reference a log4j logger.
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
 
     public BrassGeodes() {
         // Register the setup method for modloading
@@ -50,6 +48,7 @@ public class BrassGeodes {
     @SubscribeEvent
     public static void onCommonSetup(FMLCommonSetupEvent event) {
         LOGGER.debug("Running common setup.");
+
     }
 
 

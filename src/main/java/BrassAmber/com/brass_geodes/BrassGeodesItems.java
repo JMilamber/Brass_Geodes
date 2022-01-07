@@ -1,8 +1,10 @@
-package BrassAmber.com.brass_geodes.item;
+package BrassAmber.com.brass_geodes;
 
 import BrassAmber.com.brass_geodes.BrassGeodes;
+import BrassAmber.com.brass_geodes.item.GemItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -13,10 +15,10 @@ public class BrassGeodesItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, BrassGeodes.MOD_ID);
 
 
-    public static final Item PEARL = registerItem("pearl", new Item(new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
-    public static final Item RUBY = registerItem("ruby", new Item(new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
-    public static final Item SAPPHIRE = registerItem("sapphire", new Item(new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
-    public static final Item TOPAZ = registerItem("topaz", new Item(new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS)));
+    public static final Item PEARL = registerItem("pearl", new GemItem(new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS).rarity(Rarity.RARE)));
+    public static final Item RUBY = registerItem("ruby", new GemItem(new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS).rarity(Rarity.UNCOMMON)));
+    public static final Item SAPPHIRE = registerItem("sapphire", new GemItem(new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS).rarity(Rarity.UNCOMMON)));
+    public static final Item TOPAZ = registerItem("topaz", new GemItem(new Item.Properties().tab(CreativeModeTab.TAB_MATERIALS).rarity(Rarity.COMMON)));
 
 
     /**

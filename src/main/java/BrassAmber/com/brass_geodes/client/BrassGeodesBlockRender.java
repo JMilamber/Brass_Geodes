@@ -1,23 +1,10 @@
 package BrassAmber.com.brass_geodes.client;
 
-import BrassAmber.com.brass_geodes.block.BrassGeodesBlocks;
-import com.google.common.collect.Maps;
-import net.minecraft.Util;
-import net.minecraft.client.Minecraft;
+import BrassAmber.com.brass_geodes.BrassGeodesBlocks;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.Sheets;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.LeavesBlock;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-
-import java.util.Map;
 
 @OnlyIn(Dist.CLIENT)
 public class BrassGeodesBlockRender {
