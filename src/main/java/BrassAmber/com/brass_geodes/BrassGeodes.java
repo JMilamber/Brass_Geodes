@@ -1,11 +1,14 @@
 package BrassAmber.com.brass_geodes;
 
-import BrassAmber.com.brass_geodes.client.BrassGeodesBlockRender;
+import BrassAmber.com.brass_geodes.client.BGBlockRender;
+import BrassAmber.com.brass_geodes.config.BrassGeodesConfig;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -23,17 +26,20 @@ public class BrassGeodes {
         // Register the setup method for modloading
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+
         BrassGeodesItems.register(eventBus);
         BrassGeodesBlocks.register(eventBus);
 
         eventBus.addListener(this::setUpClient);
+
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, BrassGeodesConfig.SPEC, "brassgeodes-config.toml");
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void setUpClient(final FMLClientSetupEvent event) {
-        BrassGeodesBlockRender.setRenderLayers();
+        BGBlockRender.setRenderLayers();
     }
 
     /*@SubscribeEvent

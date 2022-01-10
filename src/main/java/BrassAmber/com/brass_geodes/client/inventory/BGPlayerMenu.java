@@ -14,7 +14,7 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 
 
-public class BrassGeodesPlayerMenu extends RecipeBookMenu<CraftingContainer> {
+public class BGPlayerMenu extends RecipeBookMenu<CraftingContainer> {
     public static final int CONTAINER_ID = 0;
     public static final int RESULT_SLOT = 0;
     public static final int CRAFT_SLOT_START = 1;
@@ -40,7 +40,7 @@ public class BrassGeodesPlayerMenu extends RecipeBookMenu<CraftingContainer> {
     public final boolean active;
     private final Player owner;
 
-    public BrassGeodesPlayerMenu(Inventory inventory, boolean active, Player player) {
+    public BGPlayerMenu(Inventory inventory, boolean active, Player player) {
         super((MenuType<?>) null, 0);
         this.active = active;
         this.owner = player;
@@ -69,7 +69,7 @@ public class BrassGeodesPlayerMenu extends RecipeBookMenu<CraftingContainer> {
                 }
 
                 public Pair<ResourceLocation, ResourceLocation> getNoItemIcon() {
-                    return Pair.of(BrassGeodesPlayerMenu.BLOCK_ATLAS, BrassGeodesPlayerMenu.TEXTURE_EMPTY_SLOTS[equipmentslot.getIndex()]);
+                    return Pair.of(BGPlayerMenu.BLOCK_ATLAS, BGPlayerMenu.TEXTURE_EMPTY_SLOTS[equipmentslot.getIndex()]);
                 }
             });
         }
@@ -86,13 +86,13 @@ public class BrassGeodesPlayerMenu extends RecipeBookMenu<CraftingContainer> {
 
         this.addSlot(new Slot(inventory, 40, 77, 62) {
             public Pair<ResourceLocation, ResourceLocation> getNoItemIcon() {
-                return Pair.of(BrassGeodesPlayerMenu.BLOCK_ATLAS, BrassGeodesPlayerMenu.EMPTY_ARMOR_SLOT_SHIELD);
+                return Pair.of(BGPlayerMenu.BLOCK_ATLAS, BGPlayerMenu.EMPTY_ARMOR_SLOT_SHIELD);
             }
         });
 
         this.addSlot(new RingSlot(inventory, 46, 100, 62) {
             public Pair<ResourceLocation, ResourceLocation> getNoItemIcon() {
-                return Pair.of(BrassGeodesPlayerMenu.BLOCK_ATLAS, BrassGeodesPlayerMenu.EMPTY_ARMOR_SLOT_SHIELD);
+                return Pair.of(BGPlayerMenu.BLOCK_ATLAS, BGPlayerMenu.EMPTY_ARMOR_SLOT_SHIELD);
             }
         });
     }

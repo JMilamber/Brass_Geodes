@@ -45,5 +45,12 @@
   "block.brass_geodes.small_emerald_bud": "Small Emerald Bud",
   "block.brass_geodes.small_ruby_bud" : "Small Ruby Bud",
   "block.brass_geodes.small_sapphire_bud": "Small Sapphire Bud",
-  "block.brass_geodes.small_topaz_bud": "Small Topaz Bud"
+  "block.brass_geodes.small_topaz_bud": "Small Topaz Bud",
+
+  "block.brass_geodes.diamond_tinted_glass": "Diamond Tinted Glass",
+  "block.brass_geodes.emerald_tinted_glass": "Emerald Tinted Glass",
+  "block.brass_geodes.ruby_tinted_glass" : "Ruby Tinted Glass",
+  "block.brass_geodes.sapphire_tinted_glass": "Sapphire Tinted Glass",
+  "block.brass_geodes.topaz_tinted_glass": "Topaz Tinted Glass",
+  "block.brass_geodes.amethyst_tinted_glass": "Amethyst Tinted Glass"
 }

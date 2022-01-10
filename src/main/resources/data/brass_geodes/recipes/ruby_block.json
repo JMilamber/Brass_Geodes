@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "gem",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "brass_geodes:ruby"
+    }
+  },
+  "result": {
+    "item": "brass_geodes:ruby_block"
+  }
+}

@@ -1,6 +1,7 @@
 package BrassAmber.com.brass_geodes.world.features;
 
 import BrassAmber.com.brass_geodes.BrassGeodesBlocks;
+import BrassAmber.com.brass_geodes.util.GemMaterial;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.worldgen.features.CaveFeatures;
@@ -22,11 +23,24 @@ import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
-public class BrassGeodesConfiguredFeatures {
+public class BGConfiguredFeatures {
 
     public static <FC extends FeatureConfiguration> ConfiguredFeature<FC, ?> register(String name, ConfiguredFeature<FC, ?> configuredFeature) {
         return Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, name, configuredFeature);
     }
+
+    public static final ConfiguredFeature<GeodeConfiguration, ?> AMETHYST_GEODE = register("amethyst_geode",
+            Feature.GEODE.configured(new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
+                    BlockStateProvider.simple(Blocks.AMETHYST_BLOCK), BlockStateProvider.simple(Blocks.BUDDING_AMETHYST),
+                    BlockStateProvider.simple(Blocks.CALCITE), BlockStateProvider.simple(Blocks.SMOOTH_BASALT),
+                    List.of(Blocks.SMALL_AMETHYST_BUD.defaultBlockState(), Blocks.MEDIUM_AMETHYST_BUD.defaultBlockState(),
+                            Blocks.LARGE_AMETHYST_BUD.defaultBlockState(), Blocks.AMETHYST_CLUSTER.defaultBlockState()),
+                    BlockTags.FEATURES_CANNOT_REPLACE.getName(), BlockTags.GEODE_INVALID_BLOCKS.getName()),
+                    new GeodeLayerSettings(1.7D, 2.2D, 3.2D, 4.2D),
+                    new GeodeCrackSettings(0.95D, 2.0D, 2), 0.35D, GemMaterial.AMETHYST.getRarity(),
+                    true, UniformInt.of(4, 6), UniformInt.of(3, 4),
+                    UniformInt.of(1, 2), -16, 16, 0.05D, 1)));
+
 
     public static final ConfiguredFeature<GeodeConfiguration, ?> TOPAZ_GEODE = register("topaz_geode",
             Feature.GEODE.configured(new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
@@ -36,7 +50,7 @@ public class BrassGeodesConfiguredFeatures {
                             BrassGeodesBlocks.LARGE_TOPAZ.defaultBlockState(), BrassGeodesBlocks.C_TOPAZ.defaultBlockState()),
                     BlockTags.FEATURES_CANNOT_REPLACE.getName(), BlockTags.GEODE_INVALID_BLOCKS.getName()),
                     new GeodeLayerSettings(1.7D, 2.2D, 3.2D, 4.2D),
-                    new GeodeCrackSettings(0.5D, 1.5D, 2), 0.35D, 0.083D,
+                    new GeodeCrackSettings(0.5D, 1.5D, 2), 0.35D, GemMaterial.TOPAZ.getRarity(),
                     true, UniformInt.of(4, 6), UniformInt.of(3, 4),
                     UniformInt.of(1, 2), -16, 16, 0.04D, 1)));
 
@@ -48,7 +62,7 @@ public class BrassGeodesConfiguredFeatures {
                             BrassGeodesBlocks.LARGE_SAPPHIRE.defaultBlockState(), BrassGeodesBlocks.C_SAPPHIRE.defaultBlockState()),
                     BlockTags.FEATURES_CANNOT_REPLACE.getName(), BlockTags.GEODE_INVALID_BLOCKS.getName()),
                     new GeodeLayerSettings(1.7D, 2.2D, 3.2D, 4.2D),
-                    new GeodeCrackSettings(0.5D, 1.5D, 2), 0.35D, 0.083D,
+                    new GeodeCrackSettings(0.5D, 1.5D, 2), 0.35D, GemMaterial.SAPPHIRE.getRarity(),
                     true, UniformInt.of(4, 6), UniformInt.of(3, 4),
                     UniformInt.of(1, 2), -16, 16, 0.04D, 1)));
 
@@ -60,7 +74,7 @@ public class BrassGeodesConfiguredFeatures {
                             BrassGeodesBlocks.LARGE_RUBY.defaultBlockState(), BrassGeodesBlocks.C_RUBY.defaultBlockState()),
                     BlockTags.FEATURES_CANNOT_REPLACE.getName(), BlockTags.GEODE_INVALID_BLOCKS.getName()),
                     new GeodeLayerSettings(1.7D, 2.2D, 3.2D, 4.2D),
-                    new GeodeCrackSettings(0.5D, 1.5D, 2), 0.35D, 0.083D,
+                    new GeodeCrackSettings(0.5D, 1.5D, 2), 0.35D, GemMaterial.RUBY.getRarity(),
                     true, UniformInt.of(4, 6), UniformInt.of(3, 4),
                     UniformInt.of(1, 2), -16, 16, 0.04D, 1)));
 
@@ -72,7 +86,7 @@ public class BrassGeodesConfiguredFeatures {
                             BrassGeodesBlocks.LARGE_EMERALD.defaultBlockState(), BrassGeodesBlocks.C_EMERALD.defaultBlockState()),
                     BlockTags.FEATURES_CANNOT_REPLACE.getName(), BlockTags.GEODE_INVALID_BLOCKS.getName()),
                     new GeodeLayerSettings(1.7D, 2.2D, 3.2D, 4.2D),
-                    new GeodeCrackSettings(0.5D, 1.5D, 2), 0.35D, 0.083D,
+                    new GeodeCrackSettings(0.5D, 1.5D, 2), 0.35D, GemMaterial.EMERALD.getRarity(),
                     true, UniformInt.of(4, 6), UniformInt.of(3, 4),
                     UniformInt.of(1, 2), -16, 16, 0.065D, 1)));
 
@@ -84,7 +98,7 @@ public class BrassGeodesConfiguredFeatures {
                             BrassGeodesBlocks.LARGE_DIAMOND.defaultBlockState(), BrassGeodesBlocks.C_DIAMOND.defaultBlockState()),
                     BlockTags.FEATURES_CANNOT_REPLACE.getName(), BlockTags.GEODE_INVALID_BLOCKS.getName()),
                     new GeodeLayerSettings(1.7D, 2.2D, 3.2D, 4.2D),
-                    new GeodeCrackSettings(0.5D, 1.5D, 2), 0.35D, 0.083D,
+                    new GeodeCrackSettings(0.5D, 1.5D, 2), 0.35D, GemMaterial.DIAMOND.getRarity(),
                     true, UniformInt.of(4, 6), UniformInt.of(3, 4),
                     UniformInt.of(1, 2), -16, 16, 0.075D, 1)));
 

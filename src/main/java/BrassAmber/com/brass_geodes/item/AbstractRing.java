@@ -1,5 +1,7 @@
 package BrassAmber.com.brass_geodes.item;
 
+import BrassAmber.com.brass_geodes.client.inventory.RingSlot;
+import BrassAmber.com.brass_geodes.util.GemMaterial;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.core.BlockPos;
@@ -39,18 +41,18 @@ public class AbstractRing extends Item implements Wearable {
     private final int defense;
     private final float toughness;
     protected final float knockbackResistance;
-    protected final ArmorMaterial material;
+    protected final GemMaterial material;
     private final Multimap<Attribute, AttributeModifier> defaultModifiers;
 
-    public static boolean dispenseArmor(BlockSource p_40399_, ItemStack p_40400_) {
-        BlockPos blockpos = p_40399_.getPos().relative(p_40399_.getBlockState().getValue(DispenserBlock.FACING));
-        List<LivingEntity> list = p_40399_.getLevel().getEntitiesOfClass(LivingEntity.class, new AABB(blockpos), EntitySelector.NO_SPECTATORS.and(new EntitySelector.MobCanWearArmorEntitySelector(p_40400_)));
+    public static boolean dispenseArmor(BlockSource blockSource, ItemStack itemStack) {
+        BlockPos blockpos = blockSource.getPos().relative(blockSource.getBlockState().getValue(DispenserBlock.FACING));
+        List<LivingEntity> list = blockSource.getLevel().getEntitiesOfClass(LivingEntity.class, new AABB(blockpos), EntitySelector.NO_SPECTATORS.and(new EntitySelector.MobCanWearArmorEntitySelector(itemStack)));
         if (list.isEmpty()) {
             return false;
         } else {
             LivingEntity livingentity = list.get(0);
-            EquipmentSlot equipmentslot = Mob.getEquipmentSlotForItem(p_40400_);
-            ItemStack itemstack = p_40400_.split(1);
+            EquipmentSlot equipmentslot = Mob.getEquipmentSlotForItem(itemStack);
+            ItemStack itemstack = itemStack.split(1);
             livingentity.setItemSlot(equipmentslot, itemstack);
             if (livingentity instanceof Mob) {
                 ((Mob)livingentity).setDropChance(equipmentslot, 2.0F);
@@ -61,16 +63,16 @@ public class AbstractRing extends Item implements Wearable {
         }
     }
 
-    public AbstractRing(ArmorMaterial p_40386_, EquipmentSlot p_40387_, Item.Properties p_40388_) {
-        super(p_40388_.defaultDurability(p_40386_.getDurabilityForSlot(p_40387_)));
-        this.material = p_40386_;
-        this.slot = p_40387_;
-        this.defense = p_40386_.getDefenseForSlot(p_40387_);
-        this.toughness = p_40386_.getToughness();
-        this.knockbackResistance = p_40386_.getKnockbackResistance();
+    public AbstractRing(GemMaterial material, EquipmentSlot slot, Item.Properties properties) {
+        super(properties.defaultDurability(material.getDurabilityForSlot(slot)));
+        this.material = material;
+        this.slot = slot;
+        this.defense = material.getDefenseForSlot(slot);
+        this.toughness = material.getToughness();
+        this.knockbackResistance = material.getKnockbackResistance();
         DispenserBlock.registerBehavior(this, DISPENSE_ITEM_BEHAVIOR);
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-        UUID uuid = ARMOR_MODIFIER_UUID_PER_SLOT[p_40387_.getIndex()];
+        UUID uuid = ARMOR_MODIFIER_UUID_PER_SLOT[slot.getIndex()];
         builder.put(Attributes.ARMOR, new AttributeModifier(uuid, "Armor modifier", (double)this.defense, AttributeModifier.Operation.ADDITION));
         builder.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(uuid, "Armor toughness", (double)this.toughness, AttributeModifier.Operation.ADDITION));
         if (this.knockbackResistance > 0) {

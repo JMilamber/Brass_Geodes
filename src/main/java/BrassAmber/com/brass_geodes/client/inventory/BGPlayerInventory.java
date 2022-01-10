@@ -11,7 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.event.sound.SoundEvent;
 import net.minecraftforge.common.data.SoundDefinition;
 
-public class BrassGeodesPlayerInventory implements Container, Nameable {
+public class BGPlayerInventory implements Container, Nameable {
 
     private final String name = "Custom Inventory";
 
@@ -21,7 +21,7 @@ public class BrassGeodesPlayerInventory implements Container, Nameable {
 
     private ItemStack[] inventory = new ItemStack[INV_SIZE];
 
-    public BrassGeodesPlayerInventory() {
+    public BGPlayerInventory() {
 
     }
 

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "gem",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "brass_geodes:sapphire"
+    }
+  },
+  "result": {
+    "item": "brass_geodes:sapphire_block"
+  }
+}

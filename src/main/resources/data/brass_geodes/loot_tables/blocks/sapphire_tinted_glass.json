@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "name": "brass_geodes:glasspool",
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "brass_geodes:sapphire_tinted_glass"
+        }
+      ]
+    }
+  ]
+}

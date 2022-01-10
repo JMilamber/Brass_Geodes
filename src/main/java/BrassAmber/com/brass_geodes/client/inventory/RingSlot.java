@@ -1,6 +1,7 @@
 package BrassAmber.com.brass_geodes.client.inventory;
 
 import net.minecraft.world.Container;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.inventory.Slot;
 
 public class RingSlot extends Slot {

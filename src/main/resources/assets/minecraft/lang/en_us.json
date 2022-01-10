@@ -1,5 +1,5 @@
 {
   "block.minecraft.amethyst_block": "Raw Amethyst Block",
-  "item.minecraft.amethyst_shard": "Amethyst"
-
+  "item.minecraft.amethyst_shard": "Amethyst",
+  "block.minecraft.tinted_glass": "Amethyst Tinted Glass"
 }

@@ -7,7 +7,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class BrassGeodesBlockRender {
+public class BGBlockRender {
 
     public static void setRenderLayers() {
         RenderType rendertype = RenderType.cutout();
@@ -35,6 +35,12 @@ public class BrassGeodesBlockRender {
         ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.MEDIUM_TOPAZ, rendertype);
         ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.LARGE_TOPAZ, rendertype);
         ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.C_TOPAZ, rendertype);
+
+        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.TOPAZ_TINTED, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.SAPPHIRE_TINTED, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.RUBY_TINTED, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.EMERALD_TINTED, RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.DIAMOND_TINTED, RenderType.translucent());
     }
     
 }
