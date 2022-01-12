@@ -1,6 +1,7 @@
 package BrassAmber.com.brass_geodes.item;
 
 import BrassAmber.com.brass_geodes.client.inventory.RingSlot;
+import BrassAmber.com.brass_geodes.util.BGEquipmentSlot;
 import BrassAmber.com.brass_geodes.util.GemMaterial;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
@@ -37,7 +38,7 @@ public class AbstractRing extends Item implements Wearable {
             return ArmorItem.dispenseArmor(p_40408_, p_40409_) ? p_40409_ : super.execute(p_40408_, p_40409_);
         }
     };
-    protected final EquipmentSlot slot;
+    protected final BGEquipmentSlot slot;
     private final int defense;
     private final float toughness;
     protected final float knockbackResistance;
@@ -63,11 +64,11 @@ public class AbstractRing extends Item implements Wearable {
         }
     }
 
-    public AbstractRing(GemMaterial material, EquipmentSlot slot, Item.Properties properties) {
-        super(properties.defaultDurability(material.getDurabilityForSlot(slot)));
+    public AbstractRing(GemMaterial material, BGEquipmentSlot slot, Item.Properties properties) {
+        super(properties.defaultDurability(material.getUses()));
         this.material = material;
         this.slot = slot;
-        this.defense = material.getDefenseForSlot(slot);
+        this.defense = material.getDefense();
         this.toughness = material.getToughness();
         this.knockbackResistance = material.getKnockbackResistance();
         DispenserBlock.registerBehavior(this, DISPENSE_ITEM_BEHAVIOR);
@@ -83,7 +84,7 @@ public class AbstractRing extends Item implements Wearable {
     }
 
     public EquipmentSlot getSlot() {
-        return this.slot;
+        return null;
     }
 
     public int getEnchantmentValue() {
@@ -115,8 +116,8 @@ public class AbstractRing extends Item implements Wearable {
         }
     }
 
-    public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot p_40390_) {
-        return p_40390_ == this.slot ? this.defaultModifiers : super.getDefaultAttributeModifiers(p_40390_);
+    public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(BGEquipmentSlot p_40390_) {
+        return p_40390_ == this.slot ? this.defaultModifiers : super.getDefaultAttributeModifiers(EquipmentSlot.MAINHAND);
     }
 
     public int getDefense() {

@@ -69,6 +69,16 @@ public enum GemMaterial implements Tier, ArmorMaterial {
     }
 
     @Override
+    public int getDurabilityForSlot(EquipmentSlot p_40410_) {
+        return 0;
+    }
+
+    @Override
+    public int getDefenseForSlot(EquipmentSlot p_40411_) {
+        return 0;
+    }
+
+    @Override
     public int getEnchantmentValue() {
         return this.enchantmentValue;
     }
@@ -98,12 +108,11 @@ public enum GemMaterial implements Tier, ArmorMaterial {
         return 0;
     }
 
-    public int getDurabilityForSlot(EquipmentSlot slot) {
+    public int getDurability() {
         return 4;
     }
 
-    @Override
-    public int getDefenseForSlot(EquipmentSlot p_40411_) {
+    public int getDefense() {
         return 0;
     }
 }

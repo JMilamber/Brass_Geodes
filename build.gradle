@@ -11,11 +11,11 @@ apply plugin: 'net.minecraftforge.gradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'eclipse'
 
-version = '1.0.0'
+version = '1.0.2'
 group = 'BrassAmber.com.brass_geodes' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'brass_geodes_1.18.1'
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(17) // Mojang ships Java 8 to end users, so your mod should target Java 8.
+java.toolchain.languageVersion = JavaLanguageVersion.of(17) // Mojang ships Java 17 to end users, so your mod should target Java 17.
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
@@ -95,7 +95,7 @@ dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.18.1-39.0.17'
+    minecraft 'net.minecraftforge:forge:1.18.1-39.0.19'
 
 
 }

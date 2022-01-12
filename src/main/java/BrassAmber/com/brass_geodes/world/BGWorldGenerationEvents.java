@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = BrassGeodes.MOD_ID)
 public class BGWorldGenerationEvents {
 
-    private static void WorldGenerationEvents() {}
+    private static void BGWorldGenerationEvents() {}
 
     @SubscribeEvent
     public static void  BrassGeodesWorldGeneration(final BiomeLoadingEvent event) {
