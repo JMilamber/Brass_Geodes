@@ -1,32 +1,25 @@
 # mandatory (#mandatory), optional (#optional).
 # The overall format is standard TOML format, v0.5.0.
-# Find more information on toml format here:  https://github.com/toml-lang/toml
 modLoader="javafml" #mandatory
-# version range
 loaderVersion="[39,)" #mandatory
 license="All rights reserved"
-# A URL to refer people to when problems occur with this mod
-#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/" #optional
-# list of mods
-[[mods]] #mandatory
-modId="brass_geodes" #mandatory
-version="${file.jarVersion}" #mandatory
-displayName="BrassGeodes" #mandatory
-# A URL for the "homepage" for this mod, displayed in the mod UI
-#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
-# A file name (in the root of the mod JAR) containing a logo for display
 logoFile="ring_amethyst.png" #optional
-# A text field displayed in the mod UI
-credits="" #optional
-authors="Milamber and BrassMcrafty" #optional
-description='''
-A small mod that adds different gem geodes in all biomes instead of just amethyst geodes.
-''' #mandatory
+# A URL to refer people to when problems occur with this mod
+issueTrackerURL="https://github.com/BrassAmber-Mods/Brass_Geodes/issues" #optional
+[[mods]] #mandatory
+    modId="brass_geodes" #mandatory
+    version="${file.jarVersion}" #mandatory
+    displayName="BrassGeodes" #mandatory
+    displayURL="https://www.curseforge.com/minecraft/mc-mods/brassgeodes" #optional
+    credits="BrassMcrafty for all textures, Milamber for code" #optional
+    authors="Milamber and BrassMcrafty" #optional
+    description='''
+    A small mod that adds different gem geodes in all biomes instead of just amethyst geodes.
+    ''' #mandatory
 
-[[dependencies.bezoar]]
+[[dependencies.brass_geodes]]
     modId="minecraft"
     mandatory=true
-# This version range declares a minimum of the current minecraft version up to but not including the next major version
     versionRange="[1.18,1.19)"
     ordering="NONE"
     side="BOTH"

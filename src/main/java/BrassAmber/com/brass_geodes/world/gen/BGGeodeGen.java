@@ -3,94 +3,89 @@ package BrassAmber.com.brass_geodes.world.gen;
 import BrassAmber.com.brass_geodes.config.BrassGeodesConfig;
 import BrassAmber.com.brass_geodes.world.features.BGCavePlacements;
 import net.minecraft.core.Registry;
-import net.minecraft.data.worldgen.BiomeDefaultFeatures;
-import net.minecraft.data.worldgen.placement.CavePlacements;
-import net.minecraft.data.worldgen.placement.OrePlacements;
+import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.GeodeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 
-import java.util.Set;
+import java.util.*;
+import java.util.function.Supplier;
 
 public class BGGeodeGen {
+    public static final GenerationStep.Decoration local = GenerationStep.Decoration.LOCAL_MODIFICATIONS;
+    public static final GenerationStep.Decoration ores = GenerationStep.Decoration.UNDERGROUND_ORES;
     public static void generateGeodes(final BiomeLoadingEvent event) {
         // get list of biomeTypes of the biome being loaded
         ResourceKey<Biome> key = ResourceKey.create(Registry.BIOME_REGISTRY, event.getName());
         Set<BiomeDictionary.Type> types = BiomeDictionary.getTypes(key);
 
-        // Get the BiomeGenerationSettingsBuilder (objects which contains data for all already loaded vanilla features)
+        // Get the BiomeGenerationSettingsBuilder (object which contains data for all already loaded features)
         BiomeGenerationSettingsBuilder biomeGen = event.getGeneration();
 
-        // Get the list of LOCAL_MODIFCATIONS features that vanilla minecraft has loaded (contains the default AMETHYST GEODE)
-        // Clear the list
-        biomeGen.getFeatures(GenerationStep.Decoration.LOCAL_MODIFICATIONS).clear();
+        // Create a list to hold features we want to remove
+        List<Supplier<PlacedFeature>> features = new ArrayList<Supplier<PlacedFeature>>();
+
+
+        // Geode removal and addition
+        // ---------------------------------------------------------------------------- \\
+
+        // get the PlacedFeatures for the generationStep Local_Modifications
+        for (Supplier<PlacedFeature> f : biomeGen.getFeatures(local)) {
+            // get the ConfiguredFeature base of the placed feature
+            for (ConfiguredFeature<?,?> g : f.get().getFeatures().toList()) {
+                // check if the Configuration of the feature matches the configuration of the one we want to remove
+                if (g.config instanceof GeodeConfiguration) {
+                    features.add(f);
+                }
+            }
+        }
+
+        biomeGen.getFeatures(local).removeAll(features);
 
         // Add all BrassGeodes Features (Including a decreased spawn-rate Amethyst geode)
-        biomeGen.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, BGCavePlacements.AMETHYST_GEODE);
-        biomeGen.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, BGCavePlacements.TOPAZ_GEODE);
-        biomeGen.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, BGCavePlacements.SAPPHIRE_GEODE);
-        biomeGen.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, BGCavePlacements.RUBY_GEODE);
-        biomeGen.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, BGCavePlacements.EMERALD_GEODE);
-        biomeGen.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, BGCavePlacements.DIAMOND_GEODE);
+        biomeGen.addFeature(local, BGCavePlacements.BG_AMETHYST_GEODE);
+        biomeGen.addFeature(local, BGCavePlacements.TOPAZ_GEODE);
+        biomeGen.addFeature(local, BGCavePlacements.SAPPHIRE_GEODE);
+        biomeGen.addFeature(local, BGCavePlacements.RUBY_GEODE);
+        biomeGen.addFeature(local, BGCavePlacements.EMERALD_GEODE);
+        biomeGen.addFeature(local, BGCavePlacements.DIAMOND_GEODE);
 
-        // Re-add biome specific local_modifications
-        if (types.contains(Biomes.DRIPSTONE_CAVES)) {
-            biomeGen.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, CavePlacements.LARGE_DRIPSTONE);
-        } else if (types.contains(Biomes.OLD_GROWTH_PINE_TAIGA) || types.contains(Biomes.OLD_GROWTH_SPRUCE_TAIGA)) {
-            BiomeDefaultFeatures.addMossyStoneBlock(biomeGen);
-        } else if (types.contains(Biomes.FROZEN_OCEAN)) {
-            BiomeDefaultFeatures.addIcebergs(biomeGen);
+        // clear the list of features for use in next generation step feature removal
+        features.clear();
+
+        // Ore removal
+        // ---------------------------------------------------------------------------- \\
+
+        // get the PlacedFeatures for the generationStep Local_Modifications
+        for (Supplier<PlacedFeature> f : biomeGen.getFeatures(ores)) {
+            // get the ConfiguredFeature base of the placed feature
+            for (ConfiguredFeature<?, ?> g : f.get().getFeatures().toList()) {
+                // check if the Configuration of the feature matches the configuration of the one we want to remove
+                if (g.config instanceof OreConfiguration) {
+                    // Check that the target list in the config is equal to emerald/diamond ore and the config values
+                    if (((OreConfiguration) g.config).targetStates == OreFeatures.ORE_DIAMOND_TARGET_LIST) {
+                        if (BrassGeodesConfig.removeDiamondOre.get()) {
+                            features.add(f);
+                        }
+                    }
+
+                    if (((OreConfiguration) g.config).targetStates.get(0).state == Blocks.EMERALD_ORE.defaultBlockState()) {
+                        if (BrassGeodesConfig.removeEmeraldOre.get()) {
+                            features.add(f);
+                        }
+                    }
+                }
+            }
         }
 
-        // Get the list of UNDERGROUND_ORES features that vanilla minecraft has loaded (contains Diamond and Emerald ore)
-        // Clear the list
-        event.getGeneration().getFeatures(GenerationStep.Decoration.UNDERGROUND_ORES).clear();
-
-        // Re-add stone variation
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(biomeGen);
-
-        // Re-add clay/dirt/sand/gravel
-        BiomeDefaultFeatures.addDefaultSoftDisks(biomeGen);
-
-        // Re-add Ores (Besides Diamond and Emerald)
-        biomeGen.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_COAL_UPPER);
-        biomeGen.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_COAL_LOWER);
-        biomeGen.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_IRON_UPPER);
-        biomeGen.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_IRON_MIDDLE);
-        biomeGen.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_IRON_SMALL);
-        biomeGen.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_GOLD);
-        biomeGen.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_GOLD_LOWER);
-        biomeGen.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_REDSTONE);
-        biomeGen.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_REDSTONE_LOWER);
-        biomeGen.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_LAPIS);
-        biomeGen.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_LAPIS_BURIED);
-        biomeGen.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, types.contains(Biomes.DRIPSTONE_CAVES) ? OrePlacements.ORE_COPPER_LARGE : OrePlacements.ORE_COPPER);
-
-        // Re-Add Diamond and Emerald Ore if requested in config file
-        if (BrassGeodesConfig.diamondOre.get()) {
-            biomeGen.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_DIAMOND);
-            biomeGen.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_DIAMOND_BURIED);
-            biomeGen.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_DIAMOND_LARGE);
-        }
-        if (BrassGeodesConfig.emeraldOre.get()) {
-            biomeGen.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_EMERALD);
-        }
-
-
-        // Re-add Magma (Dont know why this is considered and ore? Probably it uses the ore worldgen to generate)
-        biomeGen.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, CavePlacements.UNDERWATER_MAGMA);
-
-        // Re-add biome specific ores
-        if (types.contains(Biomes.BADLANDS)) {
-            biomeGen.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_GOLD_EXTRA);
-        }  else if (types.contains(Biomes.LUSH_CAVES)) {
-            BiomeDefaultFeatures.addLushCavesSpecialOres(biomeGen);
-        }
-
-
+        biomeGen.getFeatures(ores).removeAll(features);
     }
 }

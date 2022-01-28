@@ -32,7 +32,7 @@ public class BrassGeodes {
 
         eventBus.addListener(this::setUpClient);
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, BrassGeodesConfig.SPEC, "brassgeodes-config.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BrassGeodesConfig.SPEC, "brassgeodes-config.toml");
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

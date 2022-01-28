@@ -29,7 +29,7 @@ public class BGConfiguredFeatures {
         return Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, name, configuredFeature);
     }
 
-    public static final ConfiguredFeature<GeodeConfiguration, ?> AMETHYST_GEODE = register("amethyst_geode",
+    public static final ConfiguredFeature<GeodeConfiguration, ?> BG_AMETHYST_GEODE = register("bg_amethyst_geode",
             Feature.GEODE.configured(new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
                     BlockStateProvider.simple(Blocks.AMETHYST_BLOCK), BlockStateProvider.simple(Blocks.BUDDING_AMETHYST),
                     BlockStateProvider.simple(Blocks.CALCITE), BlockStateProvider.simple(Blocks.SMOOTH_BASALT),

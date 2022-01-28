@@ -14,26 +14,31 @@ public final class BrassGeodesConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> emeraldGeodeChance;
     public static final ForgeConfigSpec.ConfigValue<Integer> diamondGeodeChance;
 
-    public static final ForgeConfigSpec.ConfigValue<Boolean> emeraldOre;
-    public static final ForgeConfigSpec.ConfigValue<Boolean> diamondOre;
+    public static final ForgeConfigSpec.ConfigValue<Boolean> removeEmeraldOre;
+    public static final ForgeConfigSpec.ConfigValue<Boolean> removeDiamondOre;
 
 
     static {
         BUILDER.push("Config for Brass Geodes Mod!");
-        BUILDER.comment("All geode spawn chance options should be viewed as each chunk fo the game having a 1 out of 'geode_chance' to spawn.");
-        BUILDER.comment("I.E Amethyst Geodes in this mod have a chance of 1/48 chunks. 24 base + 24 Geode chance");
-        baseGeodeChance = BUILDER.comment("This is the base geode spawn chance (what vanilla Amethyst is set to) " +
-                "which all other geode chances are added on top of").define("Base Geode Chance", 24);
-        amethystGeodeChance = BUILDER.comment("Amethyst Geode Chance").define("Amethyst Geode Chance", 24);
-        topazGeodeChance =  BUILDER.comment("Topaz Geode Chance").define("Topaz Geode Chance", 40);
-        sapphireGeodeChance =  BUILDER.comment("Sapphire Geode Chance").define("Sapphire Geode Chance", 56);
-        rubyGeodeChance =  BUILDER.comment("Ruby Geode Chance").define("Ruby Geode Chance", 72);
-        emeraldGeodeChance =  BUILDER.comment("Emerald Geode Chance").define("Emerald Geode Chance", 104);
-        diamondGeodeChance = BUILDER.comment("Diamond Geode Chance").define("Diamond Geode Chance", 152);
-        BUILDER.comment("");
+        baseGeodeChance = BUILDER.comment(" All geode spawn chance options should be viewed as each chunk of the game having a 1/'base + geode_chance' to spawn.",
+                " I.E Amethyst Geodes in this mod have a chance of 1/48 chunks. 24 base + 24 Geode chance", " ---Geode Rarity--",
+                " This is the base geode spawn chance (what vanilla Amethyst is set to)",
+                " All other geode chances are added on top of this").define("Base Geode Chance", 24);
 
-        emeraldOre = BUILDER.comment("Whether Diamond Ore spawns naturally or not (default = false)").define("Diamond Ore Gen", false);
-        diamondOre = BUILDER.comment("Whether Emerald Ore spawns naturally or not (default = false)").define("Emerald Ore Gen", false);
+
+        amethystGeodeChance = BUILDER.comment(" ").define("Amethyst Geode Chance", 24);
+        topazGeodeChance =  BUILDER.define("Topaz Geode Chance", 40);
+        sapphireGeodeChance =  BUILDER.define("Sapphire Geode Chance", 56);
+        rubyGeodeChance =  BUILDER.define("Ruby Geode Chance", 72);
+        emeraldGeodeChance =  BUILDER.define("Emerald Geode Chance", 104);
+        diamondGeodeChance = BUILDER.define("Diamond Geode Chance", 152);
+
+        BUILDER.comment();
+        removeEmeraldOre = BUILDER.comment(" ", " ---Natural Ore Removal---",
+                " Whether to remove Diamond Ore from natural gen (default = true)")
+                .define("Remove Diamond Ore Gen", true);
+        removeDiamondOre = BUILDER.comment(" Whether to remove Emerald Ore from natural gen (default = true)")
+                .define("Remove Emerald Ore Gen", true);
 
         BUILDER.pop();
         SPEC = BUILDER.build();
