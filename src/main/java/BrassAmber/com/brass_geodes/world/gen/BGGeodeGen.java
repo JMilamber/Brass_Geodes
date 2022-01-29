@@ -7,6 +7,7 @@ import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.GeodeConfiguration;
@@ -22,6 +23,10 @@ import java.util.function.Supplier;
 public class BGGeodeGen {
     public static final GenerationStep.Decoration local = GenerationStep.Decoration.LOCAL_MODIFICATIONS;
     public static final GenerationStep.Decoration ores = GenerationStep.Decoration.UNDERGROUND_ORES;
+
+    public static final boolean removeDiamondOre = BrassGeodesConfig.removeDiamondOre.get();
+    public static final boolean removeEmeraldOre = BrassGeodesConfig.removeEmeraldOre.get();
+
     public static void generateGeodes(final BiomeLoadingEvent event) {
         // get list of biomeTypes of the biome being loaded
         ResourceKey<Biome> key = ResourceKey.create(Registry.BIOME_REGISTRY, event.getName());
@@ -64,6 +69,9 @@ public class BGGeodeGen {
         // Ore removal
         // ---------------------------------------------------------------------------- \\
 
+        ArrayList<BlockState> diamondOres = new ArrayList<>(Arrays.asList(Blocks.DIAMOND_ORE.defaultBlockState(), Blocks.DEEPSLATE_DIAMOND_ORE.defaultBlockState()));
+        ArrayList<BlockState> emeraldOres = new ArrayList<>(Arrays.asList(Blocks.EMERALD_ORE.defaultBlockState(), Blocks.DEEPSLATE_EMERALD_ORE.defaultBlockState()));
+
         // get the PlacedFeatures for the generationStep Local_Modifications
         for (Supplier<PlacedFeature> f : biomeGen.getFeatures(ores)) {
             // get the ConfiguredFeature base of the placed feature
@@ -71,14 +79,14 @@ public class BGGeodeGen {
                 // check if the Configuration of the feature matches the configuration of the one we want to remove
                 if (g.config instanceof OreConfiguration) {
                     // Check that the target list in the config is equal to emerald/diamond ore and the config values
-                    if (((OreConfiguration) g.config).targetStates == OreFeatures.ORE_DIAMOND_TARGET_LIST) {
-                        if (BrassGeodesConfig.removeDiamondOre.get()) {
+                    if (diamondOres.contains(((OreConfiguration) g.config).targetStates.get(0).state)) {
+                        if (removeDiamondOre) {
                             features.add(f);
                         }
                     }
 
-                    if (((OreConfiguration) g.config).targetStates.get(0).state == Blocks.EMERALD_ORE.defaultBlockState()) {
-                        if (BrassGeodesConfig.removeEmeraldOre.get()) {
+                    if (emeraldOres.contains(((OreConfiguration) g.config).targetStates.get(0).state)) {
+                        if (removeEmeraldOre) {
                             features.add(f);
                         }
                     }

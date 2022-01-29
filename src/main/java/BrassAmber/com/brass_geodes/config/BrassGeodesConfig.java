@@ -26,12 +26,12 @@ public final class BrassGeodesConfig {
                 " All other geode chances are added on top of this").define("Base Geode Chance", 24);
 
 
-        amethystGeodeChance = BUILDER.comment(" ").define("Amethyst Geode Chance", 24);
-        topazGeodeChance =  BUILDER.define("Topaz Geode Chance", 40);
-        sapphireGeodeChance =  BUILDER.define("Sapphire Geode Chance", 56);
-        rubyGeodeChance =  BUILDER.define("Ruby Geode Chance", 72);
-        emeraldGeodeChance =  BUILDER.define("Emerald Geode Chance", 104);
-        diamondGeodeChance = BUILDER.define("Diamond Geode Chance", 152);
+        amethystGeodeChance = BUILDER.comment(" ").define("Amethyst Geode Chance", 32);
+        topazGeodeChance =  BUILDER.define("Topaz Geode Chance", 48);
+        sapphireGeodeChance =  BUILDER.define("Sapphire Geode Chance", 64);
+        rubyGeodeChance =  BUILDER.define("Ruby Geode Chance", 64);
+        emeraldGeodeChance =  BUILDER.define("Emerald Geode Chance", 64);
+        diamondGeodeChance = BUILDER.define("Diamond Geode Chance", 160);
 
         BUILDER.comment();
         removeEmeraldOre = BUILDER.comment(" ", " ---Natural Ore Removal---",

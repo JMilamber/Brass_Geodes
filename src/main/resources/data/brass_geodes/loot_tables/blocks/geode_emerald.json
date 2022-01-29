@@ -4,35 +4,20 @@
     {
       "name": "brass_geodes:geodepool",
       "rolls": 1,
-      "bonus_rolls": 0,
       "entries": [
         {
-          "type": "minecraft:alternatives",
-          "children": [
-            {
-              "type": "minecraft:item",
-              "name": "brass_geodes:geode_emerald",
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "enchantments": [
-                      {
-                        "enchantment": "minecraft:silk_touch",
-                        "levels": {
-                          "min": 1,
-                          "max": 0
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          ],
+          "type": "minecraft:item",
+          "name": "brass_geodes:geode_emerald",
           "conditions": [
             {
-              "condition": "minecraft:survives_explosion"
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "enchantments": [
+                  {
+                    "enchantment": "minecraft:silk_touch"
+                  }
+                ]
+              }
             }
           ]
         }
@@ -40,4 +25,3 @@
     }
   ]
 }
-
