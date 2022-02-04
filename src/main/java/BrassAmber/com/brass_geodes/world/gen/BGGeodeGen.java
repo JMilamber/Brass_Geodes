@@ -27,7 +27,7 @@ public class BGGeodeGen {
     public static final boolean removeDiamondOre = BrassGeodesConfig.removeDiamondOre.get();
     public static final boolean removeEmeraldOre = BrassGeodesConfig.removeEmeraldOre.get();
 
-    public static void generateGeodes(final BiomeLoadingEvent event) {
+    public static void generateOverworldGeodes(final BiomeLoadingEvent event) {
         // get list of biomeTypes of the biome being loaded
         ResourceKey<Biome> key = ResourceKey.create(Registry.BIOME_REGISTRY, event.getName());
         Set<BiomeDictionary.Type> types = BiomeDictionary.getTypes(key);
@@ -55,13 +55,17 @@ public class BGGeodeGen {
 
         biomeGen.getFeatures(local).removeAll(features);
 
+
         // Add all BrassGeodes Features (Including a decreased spawn-rate Amethyst geode)
-        biomeGen.addFeature(local, BGCavePlacements.BG_AMETHYST_GEODE);
-        biomeGen.addFeature(local, BGCavePlacements.TOPAZ_GEODE);
+        biomeGen.addFeature(local, BGCavePlacements.DIAMOND_GEODE);
+        biomeGen.addFeature(local, BGCavePlacements.EMERALD_GEODE);
         biomeGen.addFeature(local, BGCavePlacements.SAPPHIRE_GEODE);
         biomeGen.addFeature(local, BGCavePlacements.RUBY_GEODE);
-        biomeGen.addFeature(local, BGCavePlacements.EMERALD_GEODE);
-        biomeGen.addFeature(local, BGCavePlacements.DIAMOND_GEODE);
+        biomeGen.addFeature(local, BGCavePlacements.TOPAZ_GEODE);
+        biomeGen.addFeature(local, BGCavePlacements.BG_AMETHYST_GEODE);
+
+
+
 
         // clear the list of features for use in next generation step feature removal
         features.clear();
