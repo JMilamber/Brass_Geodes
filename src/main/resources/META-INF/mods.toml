@@ -1,21 +1,20 @@
 # mandatory (#mandatory), optional (#optional).
 # The overall format is standard TOML format, v0.5.0.
 modLoader="javafml" #mandatory
-loaderVersion="[39,)" #mandatory
+loaderVersion="[40,)"
 license="All rights reserved"
-logoFile="ring_amethyst.png" #optional
-# A URL to refer people to when problems occur with this mod
-issueTrackerURL="https://github.com/BrassAmber-Mods/Brass_Geodes/issues" #optional
-[[mods]] #mandatory
-    modId="brass_geodes" #mandatory
-    version="${file.jarVersion}" #mandatory
-    displayName="BrassGeodes" #mandatory
-    displayURL="https://www.curseforge.com/minecraft/mc-mods/brassgeodes" #optional
-    credits="BrassMcrafty for all textures, Milamber for code" #optional
-    authors="Milamber and BrassMcrafty" #optional
+logoFile="ring_amethyst.png"
+issueTrackerURL="https://github.com/BrassAmber-Mods/Brass_Geodes/issues"
+[[mods]]
+    modId="brass_geodes"
+    version="${file.jarVersion}"
+    displayName="BrassGeodes"
+    displayURL="https://www.curseforge.com/minecraft/mc-mods/brassgeodes"
+    credits="BrassMcrafty for all textures, Milamber for code"
+    authors="Milamber and BrassMcrafty"
     description='''
     A small mod that adds different gem geodes in all biomes instead of just amethyst geodes.
-    ''' #mandatory
+    '''
 
 [[dependencies.brass_geodes]]
     modId="minecraft"

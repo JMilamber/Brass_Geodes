@@ -2,6 +2,7 @@ package BrassAmber.com.brass_geodes.world.gen;
 
 import BrassAmber.com.brass_geodes.config.BrassGeodesConfig;
 import BrassAmber.com.brass_geodes.world.features.BGCavePlacements;
+import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.resources.ResourceKey;
@@ -36,18 +37,18 @@ public class BGGeodeGen {
         BiomeGenerationSettingsBuilder biomeGen = event.getGeneration();
 
         // Create a list to hold features we want to remove
-        List<Supplier<PlacedFeature>> features = new ArrayList<Supplier<PlacedFeature>>();
+        List<Holder<PlacedFeature>> features = new ArrayList<>();
 
 
         // Geode removal and addition
         // ---------------------------------------------------------------------------- \\
 
         // get the PlacedFeatures for the generationStep Local_Modifications
-        for (Supplier<PlacedFeature> f : biomeGen.getFeatures(local)) {
+        for (Holder<PlacedFeature> f : biomeGen.getFeatures(local)) {
             // get the ConfiguredFeature base of the placed feature
-            for (ConfiguredFeature<?,?> g : f.get().getFeatures().toList()) {
+            for (ConfiguredFeature<?,?> g : f.value().getFeatures().toList()) {
                 // check if the Configuration of the feature matches the configuration of the one we want to remove
-                if (g.config instanceof GeodeConfiguration) {
+                if (g.config() instanceof GeodeConfiguration) {
                     features.add(f);
                 }
             }
@@ -77,19 +78,19 @@ public class BGGeodeGen {
         ArrayList<BlockState> emeraldOres = new ArrayList<>(Arrays.asList(Blocks.EMERALD_ORE.defaultBlockState(), Blocks.DEEPSLATE_EMERALD_ORE.defaultBlockState()));
 
         // get the PlacedFeatures for the generationStep Local_Modifications
-        for (Supplier<PlacedFeature> f : biomeGen.getFeatures(ores)) {
+        for (Holder<PlacedFeature> f : biomeGen.getFeatures(ores)) {
             // get the ConfiguredFeature base of the placed feature
-            for (ConfiguredFeature<?, ?> g : f.get().getFeatures().toList()) {
+            for (ConfiguredFeature<?, ?> g : f.value().getFeatures().toList()) {
                 // check if the Configuration of the feature matches the configuration of the one we want to remove
-                if (g.config instanceof OreConfiguration) {
+                if (g.config() instanceof OreConfiguration) {
                     // Check that the target list in the config is equal to emerald/diamond ore and the config values
-                    if (diamondOres.contains(((OreConfiguration) g.config).targetStates.get(0).state)) {
+                    if (diamondOres.contains(((OreConfiguration) g.config()).targetStates.get(0).state)) {
                         if (removeDiamondOre) {
                             features.add(f);
                         }
                     }
 
-                    if (emeraldOres.contains(((OreConfiguration) g.config).targetStates.get(0).state)) {
+                    if (emeraldOres.contains(((OreConfiguration) g.config()).targetStates.get(0).state)) {
                         if (removeEmeraldOre) {
                             features.add(f);
                         }
