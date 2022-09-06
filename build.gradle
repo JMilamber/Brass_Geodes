@@ -12,7 +12,7 @@ apply plugin: 'eclipse'
 
 version = '1.1.0'
 group = 'BrassAmber.com.brass_geodes' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'brass_geodes_1.18.1'
+archivesBaseName = 'brass_geodes_1.18.2'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17) // Mojang ships Java 17 to end users, so your mod should target Java 17.
 
