@@ -12,12 +12,12 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Supplier;
 
 public enum GemMaterial implements Tier, ArmorMaterial {
-    AMETHYST("amethyst", 56, 4F, 0.0F, 0.083F, 48),
+    AMETHYST("amethyst", 56, 4F, 0.0F, 0.083F, 64),
     TOPAZ("topaz", 64, 4F, 0.0F, 0.083F, 64),
-    SAPPHIRE("sapphire", 96, 4F, 0.0F, 0.067F,  80),
-    RUBY("ruby", 128, 6F, 1.0F, .055F, 96),
+    SAPPHIRE("sapphire", 96, 4F, 0.0F, 0.083F,  64),
+    RUBY("ruby", 128, 6F, 1.0F, .083F, 64),
     EMERALD("emerald", 196, 6F, 2.0F, 0.042F, 128),
-    DIAMOND("diamond", 256, 8F, 3.0F, 0.028F, 192);
+    DIAMOND("diamond", 256, 8F, 3.0F, 0.042F, 192);
 
 
     private final String name;
@@ -95,7 +95,7 @@ public enum GemMaterial implements Tier, ArmorMaterial {
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 
     @Override

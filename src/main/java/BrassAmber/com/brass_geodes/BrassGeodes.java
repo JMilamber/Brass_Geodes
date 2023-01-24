@@ -2,6 +2,9 @@ package BrassAmber.com.brass_geodes;
 
 import BrassAmber.com.brass_geodes.client.BGBlockRender;
 import BrassAmber.com.brass_geodes.config.BrassGeodesConfig;
+import BrassAmber.com.brass_geodes.world.features.BGCavePlacements;
+import BrassAmber.com.brass_geodes.world.features.BGConfiguredFeatures;
+import BrassAmber.com.brass_geodes.world.gen.BGGeodeGen;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -26,13 +29,14 @@ public class BrassGeodes {
         // Register the setup method for modloading
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-
         BrassGeodesItems.register(eventBus);
         BrassGeodesBlocks.register(eventBus);
-
-        eventBus.addListener(this::setUpClient);
+        BGConfiguredFeatures.register(eventBus);
+        BGCavePlacements.register(eventBus);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BrassGeodesConfig.SPEC, "brassgeodes-config.toml");
+
+        eventBus.addListener(this::setUpClient);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

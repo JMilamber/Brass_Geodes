@@ -24,7 +24,7 @@ public class BuddingGemBlock extends AmethystBlock {
         this.medium = medium;
         this.large = large;
         this.cluster = cluster;
-        this.GROWTH_CHANCE = growthChance;
+        GROWTH_CHANCE = growthChance;
     }
 
 
@@ -51,7 +51,7 @@ public class BuddingGemBlock extends AmethystBlock {
          if (block != null) {
             BlockState blockstate1 = block.defaultBlockState().setValue(GemClusterBlock.FACING, direction)
                     .setValue(GemClusterBlock.WATERLOGGED,
-                            Boolean.valueOf(blockstate.getFluidState().getType() == Fluids.WATER));
+                            blockstate.getFluidState().getType() == Fluids.WATER);
             serverLevel.setBlockAndUpdate(blockpos, blockstate1);
          }
 

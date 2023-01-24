@@ -3,17 +3,13 @@ package BrassAmber.com.brass_geodes.block;
 import com.google.common.collect.Lists;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.*;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.server.level.ServerLevel;
+
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.AmethystClusterBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.registries.ForgeRegistryEntry;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -27,7 +23,7 @@ public class GemClusterBlock extends AmethystClusterBlock {
     }
 
     @Override
-    public void animateTick(BlockState blockState, Level level, BlockPos blockPos, Random random) {
+    public void animateTick(BlockState blockState, Level level, BlockPos blockPos, RandomSource random) {
         super.animateTick(blockState, level, blockPos, random);
         List<BlockPos> validPos = Lists.newArrayList();
         validPos.add(blockPos);

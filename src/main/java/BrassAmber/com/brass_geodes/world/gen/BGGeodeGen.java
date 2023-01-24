@@ -14,9 +14,8 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.GeodeConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
-import net.minecraftforge.event.world.BiomeLoadingEvent;
+
 
 import java.util.*;
 import java.util.function.Supplier;
@@ -25,10 +24,10 @@ public class BGGeodeGen {
     public static final GenerationStep.Decoration local = GenerationStep.Decoration.LOCAL_MODIFICATIONS;
     public static final GenerationStep.Decoration ores = GenerationStep.Decoration.UNDERGROUND_ORES;
 
-    public static final boolean removeDiamondOre = BrassGeodesConfig.removeDiamondOre.get();
-    public static final boolean removeEmeraldOre = BrassGeodesConfig.removeEmeraldOre.get();
+    //public static final boolean removeDiamondOre = BrassGeodesConfig.removeDiamondOre.get();
+    //public static final boolean removeEmeraldOre = BrassGeodesConfig.removeEmeraldOre.get();
 
-    public static void generateOverworldGeodes(final BiomeLoadingEvent event) {
+    /*public static void generateOverworldGeodes(final BiomeLoadingEvent event) {
         // get list of biomeTypes of the biome being loaded
         ResourceKey<Biome> key = ResourceKey.create(Registry.BIOME_REGISTRY, event.getName());
         Set<BiomeDictionary.Type> types = BiomeDictionary.getTypes(key);
@@ -100,5 +99,5 @@ public class BGGeodeGen {
         }
 
         biomeGen.getFeatures(ores).removeAll(features);
-    }
+    }*/
 }
