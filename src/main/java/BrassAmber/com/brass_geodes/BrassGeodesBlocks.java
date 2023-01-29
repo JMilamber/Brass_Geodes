@@ -97,7 +97,7 @@ public class BrassGeodesBlocks {
     public static final RegistryObject<Block> DIAMOND_TINTED = BLOCKS.register("diamond_tinted_glass",
             () -> new TintedGlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).color(MaterialColor.DIAMOND)
                     .noOcclusion().isValidSpawn(BrassGeodesBlocks::never).isRedstoneConductor(BrassGeodesBlocks::never)
-                    .isSuffocating(BrassGeodesBlocks::never).isViewBlocking(BrassGeodesBlocks::never)));
+                    .isSuffocating(BrassGeodesBlocks::never).isViewBlocking(BrassGeodesBlocks::never).strength(.3F, 6.0F)));
 
     
 
