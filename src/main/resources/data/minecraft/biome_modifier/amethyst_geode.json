@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:has_structure/village_savanna",
+  "features": "minecraft:amethyst_geode",
+  "step": "underground_ores"
+}

@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#minecraft:is_overworld",
+  "biomes": "#minecraft:has_structure/village_plains",
   "features": "brass_geodes:topaz_geode_placed",
   "step": "underground_ores"
 }
