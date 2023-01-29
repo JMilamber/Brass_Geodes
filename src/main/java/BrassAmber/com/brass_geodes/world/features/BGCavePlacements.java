@@ -16,6 +16,10 @@ public class BGCavePlacements {
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURES =
             DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, BrassGeodes.MOD_ID);
 
+    public static final RegistryObject<PlacedFeature> BG_AMETHYST_GEODE = PLACED_FEATURES.register("bg_amethyst_geode_placed",
+            () -> new PlacedFeature(BGConfiguredFeatures.BG_AMETHYST_GEODE.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(64),
+                    InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(30)), BiomeFilter.biome())));
+
     public static final RegistryObject<PlacedFeature> TOPAZ_GEODE = PLACED_FEATURES.register("topaz_geode_placed",
             () -> new PlacedFeature(BGConfiguredFeatures.TOPAZ_GEODE.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(64),
                     InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(30)), BiomeFilter.biome())));
