@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "brass_geodes:ruby",
+    "brass_geodes:sapphire",
+    "brass_geodes:topaz",
+    "minecraft:amethyst_shard"
+  ]
+}

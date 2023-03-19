@@ -37,7 +37,7 @@ public class BGCavePlacements {
                     InSquarePlacement.spread(), HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(0), VerticalAnchor.absolute(30)), BiomeFilter.biome())));
 
     public static final RegistryObject<PlacedFeature> DIAMOND_GEODE = PLACED_FEATURES.register("diamond_geode_placed",
-            () -> new PlacedFeature(BGConfiguredFeatures.DIAMOND_GEODE.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(128),
+            () -> new PlacedFeature(BGConfiguredFeatures.DIAMOND_GEODE.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(160),
                     InSquarePlacement.spread(), HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)), BiomeFilter.biome())));
 
     public static void register(IEventBus eventBus) {

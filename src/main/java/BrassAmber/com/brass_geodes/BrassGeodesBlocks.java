@@ -2,8 +2,12 @@ package BrassAmber.com.brass_geodes;
 
 import BrassAmber.com.brass_geodes.block.BuddingGemBlock;
 import BrassAmber.com.brass_geodes.block.GemClusterBlock;
+import BrassAmber.com.brass_geodes.block.GemcornSaplingBlock;
+import BrassAmber.com.brass_geodes.block.GemstoneLeavesBlock;
 import BrassAmber.com.brass_geodes.util.GemMaterial;
+import BrassAmber.com.brass_geodes.world.features.GemcornTreeGrower;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
@@ -59,20 +63,62 @@ public class BrassGeodesBlocks {
 
     public static final RegistryObject<Block> B_TOPAZ = BLOCKS.register("budding_topaz",
           () ->  new BuddingGemBlock(BlockBehaviour.Properties.of(Material.AMETHYST).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops(),
-                    SMALL_TOPAZ.get(), MEDIUM_TOPAZ.get(), LARGE_TOPAZ.get(), C_TOPAZ.get(), Math.round(GemMaterial.TOPAZ.getRarity() * 10 * 5)));
+                    SMALL_TOPAZ.get(), MEDIUM_TOPAZ.get(), LARGE_TOPAZ.get(), C_TOPAZ.get(), Math.round(GemMaterial.TOPAZ.getRarity() * 300)));
     public static final RegistryObject<Block> B_SAPPHIRE = BLOCKS.register("budding_sapphire",
           () ->  new BuddingGemBlock(BlockBehaviour.Properties.of(Material.AMETHYST).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops(),
-                    SMALL_SAPPHIRE.get(), MEDIUM_SAPPHIRE.get(), LARGE_SAPPHIRE.get(), C_SAPPHIRE.get(), Math.round(GemMaterial.SAPPHIRE.getRarity() * 10 * 5)));
+                    SMALL_SAPPHIRE.get(), MEDIUM_SAPPHIRE.get(), LARGE_SAPPHIRE.get(), C_SAPPHIRE.get(), Math.round(GemMaterial.SAPPHIRE.getRarity() * 300)));
     public static final RegistryObject<Block> B_RUBY = BLOCKS.register("budding_ruby",
           () ->  new BuddingGemBlock(BlockBehaviour.Properties.of(Material.AMETHYST).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops(),
-                    SMALL_RUBY.get(), MEDIUM_RUBY.get(), LARGE_RUBY.get(), C_RUBY.get(), Math.round(GemMaterial.RUBY.getRarity() * 10 * 5)));
+                    SMALL_RUBY.get(), MEDIUM_RUBY.get(), LARGE_RUBY.get(), C_RUBY.get(), Math.round(GemMaterial.RUBY.getRarity() * 300)));
     public static final RegistryObject<Block> B_EMERALD = BLOCKS.register("budding_emerald",
           () ->  new BuddingGemBlock(BlockBehaviour.Properties.of(Material.AMETHYST).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops(),
-                    SMALL_EMERALD.get(), MEDIUM_EMERALD.get(), LARGE_EMERALD.get(), C_EMERALD.get(), Math.round(GemMaterial.EMERALD.getRarity() * 10 * 5)));
+                    SMALL_EMERALD.get(), MEDIUM_EMERALD.get(), LARGE_EMERALD.get(), C_EMERALD.get(), Math.round(GemMaterial.EMERALD.getRarity() * 300)));
     public static final RegistryObject<Block> B_DIAMOND = BLOCKS.register("budding_diamond",
           () ->  new BuddingGemBlock(BlockBehaviour.Properties.of(Material.AMETHYST).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops(),
-                    SMALL_DIAMOND.get(), MEDIUM_DIAMOND.get(), LARGE_DIAMOND.get(), C_DIAMOND.get(), Math.round(GemMaterial.DIAMOND.getRarity() * 10 * 5)));
+                    SMALL_DIAMOND.get(), MEDIUM_DIAMOND.get(), LARGE_DIAMOND.get(), C_DIAMOND.get(), Math.round(GemMaterial.DIAMOND.getRarity() * 300)));
 
+
+
+    public static final RegistryObject<Block> GEMCORN_BRANCH = BLOCKS.register("gemcorn_branch",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.DEAD_BUSH)));
+
+    public static final RegistryObject<Block> TOPAZ_LEAVES = BLOCKS.register("topaz_leaves",
+            () -> new GemstoneLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+
+    public static final RegistryObject<Block> RUBY_LEAVES = BLOCKS.register("ruby_leaves",
+            () -> new GemstoneLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+
+    public static final RegistryObject<Block> SAPPHIRE_LEAVES = BLOCKS.register("sapphire_leaves",
+            () -> new GemstoneLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+
+    public static final RegistryObject<Block> EMERALD_LEAVES = BLOCKS.register("emerald_leaves",
+            () -> new GemstoneLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+
+    public static final RegistryObject<Block> DIAMOND_LEAVES = BLOCKS.register("diamond_leaves",
+            () -> new GemstoneLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+
+    public static final RegistryObject<Block> GEMCORN_TRUNK = BLOCKS.register("gemcorn_trunk",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, (p_152624_) -> {
+                return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? MaterialColor.DEEPSLATE : MaterialColor.STONE;
+            }).strength(2.0F).sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> GEMCORN_AMETHYST_SAPLING = BLOCKS.register("gemcorn_amethyst_sapling",
+            () -> new GemcornSaplingBlock(new GemcornTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
+
+    public static final RegistryObject<Block> GEMCORN_TOPAZ_SAPLING = BLOCKS.register("gemcorn_topaz_sapling",
+            () -> new GemcornSaplingBlock(new GemcornTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
+
+    public static final RegistryObject<Block> GEMCORN_RUBY_SAPLING = BLOCKS.register("gemcorn_ruby_sapling",
+            () -> new GemcornSaplingBlock(new GemcornTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
+
+    public static final RegistryObject<Block> GEMCORN_SAPPHIRE_SAPLING = BLOCKS.register("gemcorn_sapphire_sapling",
+            () -> new GemcornSaplingBlock(new GemcornTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
+
+    public static final RegistryObject<Block> GEMCORN_EMERALD_SAPLING = BLOCKS.register("gemcorn_emerald_sapling",
+            () -> new GemcornSaplingBlock(new GemcornTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
+
+    public static final RegistryObject<Block> GEMCORN_DIAMOND_SAPLING = BLOCKS.register("gemcorn_diamond_sapling",
+            () -> new GemcornSaplingBlock(new GemcornTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
 
     public static final RegistryObject<Block>  TOPAZ_TINTED = BLOCKS.register("topaz_tinted_glass",
           () ->  new TintedGlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).color(MaterialColor.COLOR_ORANGE)

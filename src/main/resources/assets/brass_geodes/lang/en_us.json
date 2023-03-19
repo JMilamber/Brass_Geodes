@@ -1,6 +1,5 @@
 {
   // Items
-  "item.brass_geodes.pearl": "Pearl",
   "item.brass_geodes.ruby" : "Ruby",
   "item.brass_geodes.sapphire": "Sapphire",
   "item.brass_geodes.topaz": "Topaz",
@@ -51,5 +50,19 @@
   "block.brass_geodes.emerald_tinted_glass": "Emerald Tinted Glass",
   "block.brass_geodes.ruby_tinted_glass" : "Ruby Tinted Glass",
   "block.brass_geodes.sapphire_tinted_glass": "Sapphire Tinted Glass",
-  "block.brass_geodes.topaz_tinted_glass": "Topaz Tinted Glass"
+  "block.brass_geodes.topaz_tinted_glass": "Topaz Tinted Glass",
+
+  "block.brass_geodes.gemcorn_branch": "Gemcorn Branch",
+  "block.brass_geodes.topaz_leaves": "Topaz Leaves",
+  "block.brass_geodes.ruby_leaves": "Ruby Leaves",
+  "block.brass_geodes.sapphire_leaves": "Sapphire Leaves",
+  "block.brass_geodes.emerald_leaves": "Emerald Leaves",
+  "block.brass_geodes.diamond_leaves": "Diamond Leaves",
+  "block.brass_geodes.gemcorn_trunk": "Gemcorn Trunk",
+  "block.brass_geodes.gemcorn_amethyst_sapling": "Amethyst Gemcorn Sapling",
+  "block.brass_geodes.gemcorn_topaz_sapling": "Gemcorn Topaz Sapling",
+  "block.brass_geodes.gemcorn_ruby_sapling": "Gemcorn Ruby Sapling",
+  "block.brass_geodes.gemcorn_sapphire_sapling": "Gemcorn Sapphire Sapling",
+  "block.brass_geodes.gemcorn_emerald_sapling": "Gemcorn Emerald Sapling",
+  "block.brass_geodes.gemcorn_diamond_sapling": "Gemcorn Diamond Sapling"
 }
