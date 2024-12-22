@@ -5,6 +5,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -69,12 +70,12 @@ public enum GemMaterial implements Tier, ArmorMaterial {
     }
 
     @Override
-    public int getDurabilityForSlot(EquipmentSlot p_40410_) {
+    public int getDurabilityForType(ArmorItem.Type p_266807_) {
         return 0;
     }
 
     @Override
-    public int getDefenseForSlot(EquipmentSlot p_40411_) {
+    public int getDefenseForType(ArmorItem.Type p_267168_) {
         return 0;
     }
 

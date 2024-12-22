@@ -1,6 +1,6 @@
 package BrassAmber.com.brass_geodes.client;
 
-import BrassAmber.com.brass_geodes.BrassGeodesBlocks;
+import BrassAmber.com.brass_geodes.BGBlocks;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -11,36 +11,36 @@ public class BGBlockRender {
 
     public static void setRenderLayers() {
         RenderType rendertype = RenderType.cutout();
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.SMALL_DIAMOND.get(), rendertype);
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.MEDIUM_DIAMOND.get(), rendertype);
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.LARGE_DIAMOND.get(), rendertype);
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.C_DIAMOND.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.SMALL_DIAMOND_BUD.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.MEDIUM_DIAMOND_BUD.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.LARGE_DIAMOND_BUD.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.DIAMOND_CLUSTER.get(), rendertype);
 
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.SMALL_EMERALD.get(), rendertype);
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.MEDIUM_EMERALD.get(), rendertype);
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.LARGE_EMERALD.get(), rendertype);
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.C_EMERALD.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.SMALL_EMERALD_BUD.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.MEDIUM_EMERALD_BUD.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.LARGE_EMERALD_BUD.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.EMERALD_CLUSTER.get(), rendertype);
 
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.SMALL_RUBY.get(), rendertype);
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.MEDIUM_RUBY.get(), rendertype);
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.LARGE_RUBY.get(), rendertype);
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.C_RUBY.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.SMALL_RUBY_BUD.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.MEDIUM_RUBY_BUD.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.LARGE_RUBY_BUD.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.RUBY_CLUSTER.get(), rendertype);
 
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.SMALL_SAPPHIRE.get(), rendertype);
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.MEDIUM_SAPPHIRE.get(), rendertype);
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.LARGE_SAPPHIRE.get(), rendertype);
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.C_SAPPHIRE.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.SMALL_SAPPHIRE_BUD.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.MEDIUM_SAPPHIRE_BUD.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.LARGE_SAPPHIRE_BUD.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.SAPPHIRE_CLUSTER.get(), rendertype);
 
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.SMALL_TOPAZ.get(), rendertype);
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.MEDIUM_TOPAZ.get(), rendertype);
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.LARGE_TOPAZ.get(), rendertype);
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.C_TOPAZ.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.SMALL_TOPAZ_BUD.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.MEDIUM_TOPAZ_BUD.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.LARGE_TOPAZ_BUD.get(), rendertype);
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.TOPAZ_CLUSTER.get(), rendertype);
 
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.TOPAZ_TINTED.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.SAPPHIRE_TINTED.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.RUBY_TINTED.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.EMERALD_TINTED.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(BrassGeodesBlocks.DIAMOND_TINTED.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.TOPAZ_TINTED_GLASS.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.SAPPHIRE_TINTED_GLASS.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.RUBY_TINTED_GLASS.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.EMERALD_TINTED_GLASS.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(BGBlocks.DIAMOND_TINTED_GLASS.get(), RenderType.translucent());
     }
     
 }

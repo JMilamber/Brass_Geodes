@@ -1,7 +1,7 @@
 package BrassAmber.com.brass_geodes.world.features;
 
+import BrassAmber.com.brass_geodes.BGBlocks;
 import BrassAmber.com.brass_geodes.BrassGeodes;
-import BrassAmber.com.brass_geodes.BrassGeodesBlocks;
 import BrassAmber.com.brass_geodes.util.GemMaterial;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
@@ -18,7 +18,6 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.GeodeConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
@@ -48,10 +47,10 @@ public class BGConfiguredFeatures {
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> TOPAZ_GEODE =  CONFIGURED_FEATURES.register("topaz_geode",
             () -> new ConfiguredFeature<>(Feature.GEODE, new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
-                    BlockStateProvider.simple(BrassGeodesBlocks.GEODE_TOPAZ.get()), BlockStateProvider.simple(BrassGeodesBlocks.B_TOPAZ.get()),
+                    BlockStateProvider.simple(BGBlocks.RAW_TOPAZ.get()), BlockStateProvider.simple(BGBlocks.BUDDING_TOPAZ.get()),
                     BlockStateProvider.simple(Blocks.CALCITE), BlockStateProvider.simple(Blocks.SMOOTH_BASALT),
-                    List.of(BrassGeodesBlocks.SMALL_TOPAZ.get().defaultBlockState(), BrassGeodesBlocks.MEDIUM_TOPAZ.get().defaultBlockState(),
-                            BrassGeodesBlocks.LARGE_TOPAZ.get().defaultBlockState(), BrassGeodesBlocks.C_TOPAZ.get().defaultBlockState()),
+                    List.of(BGBlocks.SMALL_TOPAZ_BUD.get().defaultBlockState(), BGBlocks.MEDIUM_TOPAZ_BUD.get().defaultBlockState(),
+                            BGBlocks.LARGE_TOPAZ_BUD.get().defaultBlockState(), BGBlocks.TOPAZ_CLUSTER.get().defaultBlockState()),
                     BlockTags.FEATURES_CANNOT_REPLACE, BlockTags.GEODE_INVALID_BLOCKS),
                     new GeodeLayerSettings(1.7D, 2.2D, 3.2D, 4.2D),
                     new GeodeCrackSettings(0.5D, 1.5D, 2), 0.35D, GemMaterial.TOPAZ.getRarity(),
@@ -60,10 +59,10 @@ public class BGConfiguredFeatures {
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> SAPPHIRE_GEODE = CONFIGURED_FEATURES.register("sapphire_geode",
             () -> new ConfiguredFeature<>(Feature.GEODE, new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
-                    BlockStateProvider.simple(BrassGeodesBlocks.GEODE_SAPPHIRE.get()), BlockStateProvider.simple(BrassGeodesBlocks.B_SAPPHIRE.get()),
+                    BlockStateProvider.simple(BGBlocks.RAW_SAPPHIRE.get()), BlockStateProvider.simple(BGBlocks.BUDDING_SAPPHIRE.get()),
                     BlockStateProvider.simple(Blocks.CALCITE), BlockStateProvider.simple(Blocks.SMOOTH_BASALT),
-                    List.of(BrassGeodesBlocks.SMALL_SAPPHIRE.get().defaultBlockState(), BrassGeodesBlocks.MEDIUM_SAPPHIRE.get().defaultBlockState(),
-                            BrassGeodesBlocks.LARGE_SAPPHIRE.get().defaultBlockState(), BrassGeodesBlocks.C_SAPPHIRE.get().defaultBlockState()),
+                    List.of(BGBlocks.SMALL_SAPPHIRE_BUD.get().defaultBlockState(), BGBlocks.MEDIUM_SAPPHIRE_BUD.get().defaultBlockState(),
+                            BGBlocks.LARGE_SAPPHIRE_BUD.get().defaultBlockState(), BGBlocks.SAPPHIRE_CLUSTER.get().defaultBlockState()),
                     BlockTags.FEATURES_CANNOT_REPLACE, BlockTags.GEODE_INVALID_BLOCKS),
                     new GeodeLayerSettings(1.7D, 2.2D, 3.2D, 4.2D),
                     new GeodeCrackSettings(0.5D, 1.5D, 2), 0.35D, GemMaterial.SAPPHIRE.getRarity(),
@@ -72,10 +71,10 @@ public class BGConfiguredFeatures {
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> RUBY_GEODE =  CONFIGURED_FEATURES.register("ruby_geode",
             () -> new ConfiguredFeature<>(Feature.GEODE, new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
-                    BlockStateProvider.simple(BrassGeodesBlocks.GEODE_RUBY.get()), BlockStateProvider.simple(BrassGeodesBlocks.B_RUBY.get()),
+                    BlockStateProvider.simple(BGBlocks.RAW_RUBY.get()), BlockStateProvider.simple(BGBlocks.BUDDING_RUBY.get()),
                     BlockStateProvider.simple(Blocks.CALCITE), BlockStateProvider.simple(Blocks.SMOOTH_BASALT),
-                    List.of(BrassGeodesBlocks.SMALL_RUBY.get().defaultBlockState(), BrassGeodesBlocks.MEDIUM_RUBY.get().defaultBlockState(),
-                            BrassGeodesBlocks.LARGE_RUBY.get().defaultBlockState(), BrassGeodesBlocks.C_RUBY.get().defaultBlockState()),
+                    List.of(BGBlocks.SMALL_RUBY_BUD.get().defaultBlockState(), BGBlocks.MEDIUM_RUBY_BUD.get().defaultBlockState(),
+                            BGBlocks.LARGE_RUBY_BUD.get().defaultBlockState(), BGBlocks.RUBY_CLUSTER.get().defaultBlockState()),
                     BlockTags.FEATURES_CANNOT_REPLACE, BlockTags.GEODE_INVALID_BLOCKS),
                     new GeodeLayerSettings(1.7D, 2.2D, 3.2D, 4.2D),
                     new GeodeCrackSettings(0.5D, 1.5D, 2), 0.35D, GemMaterial.RUBY.getRarity(),
@@ -84,10 +83,10 @@ public class BGConfiguredFeatures {
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> EMERALD_GEODE = CONFIGURED_FEATURES.register("emerald_geode",
             () -> new ConfiguredFeature<>(Feature.GEODE, new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
-                    BlockStateProvider.simple(BrassGeodesBlocks.GEODE_EMERALD.get()), BlockStateProvider.simple(BrassGeodesBlocks.B_EMERALD.get()),
+                    BlockStateProvider.simple(BGBlocks.RAW_EMERALD.get()), BlockStateProvider.simple(BGBlocks.BUDDING_EMERALD.get()),
                     BlockStateProvider.simple(Blocks.CALCITE), BlockStateProvider.simple(Blocks.SMOOTH_BASALT),
-                    List.of(BrassGeodesBlocks.SMALL_EMERALD.get().defaultBlockState(), BrassGeodesBlocks.MEDIUM_EMERALD.get().defaultBlockState(),
-                            BrassGeodesBlocks.LARGE_EMERALD.get().defaultBlockState(), BrassGeodesBlocks.C_EMERALD.get().defaultBlockState()),
+                    List.of(BGBlocks.SMALL_EMERALD_BUD.get().defaultBlockState(), BGBlocks.MEDIUM_EMERALD_BUD.get().defaultBlockState(),
+                            BGBlocks.LARGE_EMERALD_BUD.get().defaultBlockState(), BGBlocks.EMERALD_CLUSTER.get().defaultBlockState()),
                     BlockTags.FEATURES_CANNOT_REPLACE, BlockTags.GEODE_INVALID_BLOCKS),
                     new GeodeLayerSettings(1.7D, 2.2D, 3.2D, 4.2D),
                     new GeodeCrackSettings(0.5D, 1.5D, 2), 0.35D, GemMaterial.EMERALD.getRarity(),
@@ -96,11 +95,11 @@ public class BGConfiguredFeatures {
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> DIAMOND_GEODE = CONFIGURED_FEATURES.register("diamond_geode",
             () -> new ConfiguredFeature<>(Feature.GEODE, new GeodeConfiguration(
-                    new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR), BlockStateProvider.simple(BrassGeodesBlocks.GEODE_DIAMOND.get()),
-                            BlockStateProvider.simple(BrassGeodesBlocks.B_DIAMOND.get()), BlockStateProvider.simple(Blocks.CALCITE),
+                    new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR), BlockStateProvider.simple(BGBlocks.RAW_DIAMOND.get()),
+                            BlockStateProvider.simple(BGBlocks.BUDDING_DIAMOND.get()), BlockStateProvider.simple(Blocks.CALCITE),
                             BlockStateProvider.simple(Blocks.SMOOTH_BASALT),
-                            List.of(BrassGeodesBlocks.SMALL_DIAMOND.get().defaultBlockState(), BrassGeodesBlocks.MEDIUM_DIAMOND.get().defaultBlockState(),
-                                    BrassGeodesBlocks.LARGE_DIAMOND.get().defaultBlockState(), BrassGeodesBlocks.C_DIAMOND.get().defaultBlockState()),
+                            List.of(BGBlocks.SMALL_DIAMOND_BUD.get().defaultBlockState(), BGBlocks.MEDIUM_DIAMOND_BUD.get().defaultBlockState(),
+                                    BGBlocks.LARGE_DIAMOND_BUD.get().defaultBlockState(), BGBlocks.DIAMOND_CLUSTER.get().defaultBlockState()),
                             BlockTags.FEATURES_CANNOT_REPLACE, BlockTags.GEODE_INVALID_BLOCKS),
                     new GeodeLayerSettings(1.7D, 2.2D, 3.2D, 4.2D),
                     new GeodeCrackSettings(0.5D, 1.5D, 2),
@@ -117,40 +116,40 @@ public class BGConfiguredFeatures {
 
     public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> TOPAZ_GEMCORN_TREE = FeatureUtils.register("topaz_gemcorn_tree", Feature.TREE,
             (
-                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BrassGeodesBlocks.GEMCORN_TRUNK.get()),
-                            new ForkingTrunkPlacer(4, 3, 3), BlockStateProvider.simple(BrassGeodesBlocks.TOPAZ_LEAVES.get()),
+                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BGBlocks.GEMCORN_TRUNK.get()),
+                            new ForkingTrunkPlacer(4, 3, 3), BlockStateProvider.simple(BGBlocks.TOPAZ_LEAVES.get()),
                             new FancyFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1), 1),
                             new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().dirt(BlockStateProvider.simple(Blocks.STONE)).build()
     );
 
     public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> RUBY_GEMCORN_TREE = FeatureUtils.register("ruby_gemcorn_tree", Feature.TREE,
             (
-                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BrassGeodesBlocks.GEMCORN_TRUNK.get()),
-                            new ForkingTrunkPlacer(4, 3, 3), BlockStateProvider.simple(BrassGeodesBlocks.RUBY_LEAVES.get()),
+                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BGBlocks.GEMCORN_TRUNK.get()),
+                            new ForkingTrunkPlacer(4, 3, 3), BlockStateProvider.simple(BGBlocks.RUBY_LEAVES.get()),
                             new FancyFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1), 1),
                             new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().dirt(BlockStateProvider.simple(Blocks.STONE)).build()
     );
 
     public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> SAPPHIRE_GEMCORN_TREE = FeatureUtils.register("sapphire_gemcorn_tree", Feature.TREE,
             (
-                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BrassGeodesBlocks.GEMCORN_TRUNK.get()),
-                            new ForkingTrunkPlacer(4, 3, 3), BlockStateProvider.simple(BrassGeodesBlocks.SAPPHIRE_LEAVES.get()),
+                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BGBlocks.GEMCORN_TRUNK.get()),
+                            new ForkingTrunkPlacer(4, 3, 3), BlockStateProvider.simple(BGBlocks.SAPPHIRE_LEAVES.get()),
                             new FancyFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1), 1),
                             new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().dirt(BlockStateProvider.simple(Blocks.STONE)).build()
     );
 
     public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> EMERALD_GEMCORN_TREE = FeatureUtils.register("emerald_gemcorn_tree", Feature.TREE,
             (
-                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BrassGeodesBlocks.GEMCORN_TRUNK.get()),
-                            new ForkingTrunkPlacer(4, 3, 3), BlockStateProvider.simple(BrassGeodesBlocks.EMERALD_LEAVES.get()),
+                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BGBlocks.GEMCORN_TRUNK.get()),
+                            new ForkingTrunkPlacer(4, 3, 3), BlockStateProvider.simple(BGBlocks.EMERALD_LEAVES.get()),
                             new FancyFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1), 1),
                             new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().dirt(BlockStateProvider.simple(Blocks.STONE)).build()
     );
 
     public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> DIAMOND_GEMCORN_TREE = FeatureUtils.register("diamond_gemcorn_tree", Feature.TREE,
             (
-                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BrassGeodesBlocks.GEMCORN_TRUNK.get()),
-                            new ForkingTrunkPlacer(4, 3, 3), BlockStateProvider.simple(BrassGeodesBlocks.DIAMOND_LEAVES.get()),
+                    new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BGBlocks.GEMCORN_TRUNK.get()),
+                            new ForkingTrunkPlacer(4, 3, 3), BlockStateProvider.simple(BGBlocks.DIAMOND_LEAVES.get()),
                             new FancyFoliagePlacer(ConstantInt.of(1), ConstantInt.of(1), 1),
                             new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().dirt(BlockStateProvider.simple(Blocks.STONE)).build()
     );

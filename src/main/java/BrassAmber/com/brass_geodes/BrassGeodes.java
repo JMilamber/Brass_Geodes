@@ -4,9 +4,12 @@ import BrassAmber.com.brass_geodes.client.BGBlockRender;
 import BrassAmber.com.brass_geodes.config.BrassGeodesConfig;
 import BrassAmber.com.brass_geodes.world.features.BGCavePlacements;
 import BrassAmber.com.brass_geodes.world.features.BGConfiguredFeatures;
-import BrassAmber.com.brass_geodes.world.gen.BGGeodeGen;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -15,8 +18,10 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(BrassGeodes.MOD_ID)
@@ -29,17 +34,96 @@ public class BrassGeodes {
         // Register the setup method for modloading
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        BrassGeodesItems.register(eventBus);
-        BrassGeodesBlocks.register(eventBus);
+        BGBlocks.register(eventBus);
+        BGBlocks.register(eventBus);
         BGConfiguredFeatures.register(eventBus);
         BGCavePlacements.register(eventBus);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BrassGeodesConfig.SPEC, "brassgeodes-config.toml");
 
         eventBus.addListener(this::setUpClient);
+        eventBus.addListener(this::addCreative);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    // Add the example block item to the building blocks tab
+    private void addCreative(BuildCreativeModeTabContentsEvent event)
+    {
+
+        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+
+            event.accept(BGBlocks.RAW_TOPAZ);
+            event.accept(BGBlocks.RAW_SAPPHIRE);
+            event.accept(BGBlocks.RAW_RUBY);
+            event.accept(BGBlocks.RAW_DIAMOND);
+            event.accept(BGBlocks.RAW_EMERALD);
+
+            event.accept(BGBlocks.AMETHYST_BLOCK);
+            event.accept(BGBlocks.TOPAZ_BLOCK);
+            event.accept(BGBlocks.SAPPHIRE_BLOCK);
+            event.accept(BGBlocks.RUBY_BLOCK);
+
+            event.accept(BGBlocks.TOPAZ_CLUSTER);
+            event.accept(BGBlocks.SAPPHIRE_CLUSTER);
+            event.accept(BGBlocks.RUBY_CLUSTER);
+            event.accept(BGBlocks.EMERALD_CLUSTER);
+            event.accept(BGBlocks.DIAMOND_CLUSTER);
+
+            event.accept(BGBlocks.LARGE_TOPAZ_BUD);
+            event.accept(BGBlocks.LARGE_SAPPHIRE_BUD);
+            event.accept(BGBlocks.LARGE_RUBY_BUD);
+            event.accept(BGBlocks.LARGE_EMERALD_BUD);
+            event.accept(BGBlocks.LARGE_DIAMOND_BUD);
+
+            event.accept(BGBlocks.MEDIUM_TOPAZ_BUD);
+            event.accept(BGBlocks.MEDIUM_SAPPHIRE_BUD);
+            event.accept(BGBlocks.MEDIUM_RUBY_BUD);
+            event.accept(BGBlocks.MEDIUM_EMERALD_BUD);
+            event.accept(BGBlocks.MEDIUM_DIAMOND_BUD);
+
+            event.accept(BGBlocks.SMALL_TOPAZ_BUD);
+            event.accept(BGBlocks.SMALL_SAPPHIRE_BUD);
+            event.accept(BGBlocks.SMALL_RUBY_BUD);
+            event.accept(BGBlocks.SMALL_EMERALD_BUD);
+            event.accept(BGBlocks.SMALL_DIAMOND_BUD);
+
+            event.accept(BGBlocks.BUDDING_TOPAZ);
+            event.accept(BGBlocks.BUDDING_SAPPHIRE);
+            event.accept(BGBlocks.BUDDING_RUBY);
+            event.accept(BGBlocks.BUDDING_EMERALD);
+            event.accept(BGBlocks.BUDDING_DIAMOND);
+
+            event.accept(BGBlocks.GEMCORN_BRANCH);
+            event.accept(BGBlocks.GEMCORN_TRUNK);
+
+            event.accept(BGBlocks.AMETHYST_LEAVES);
+            event.accept(BGBlocks.TOPAZ_LEAVES);
+            event.accept(BGBlocks.SAPPHIRE_LEAVES);
+            event.accept(BGBlocks.RUBY_LEAVES);
+            event.accept(BGBlocks.EMERALD_LEAVES);
+            event.accept(BGBlocks.DIAMOND_LEAVES);
+
+            event.accept(BGBlocks.AMETHYST_GEMCORN_SAPLING);
+            event.accept(BGBlocks.TOPAZ_GEMCORN_SAPLING);
+            event.accept(BGBlocks.SAPPHIRE_GEMCORN_SAPLING);
+            event.accept(BGBlocks.RUBY_GEMCORN_SAPLING);
+            event.accept(BGBlocks.EMERALD_GEMCORN_SAPLING);
+            event.accept(BGBlocks.DIAMOND_GEMCORN_SAPLING);
+
+            event.accept(BGBlocks.TOPAZ_TINTED_GLASS);
+            event.accept(BGBlocks.SAPPHIRE_TINTED_GLASS);
+            event.accept(BGBlocks.RUBY_TINTED_GLASS);
+            event.accept(BGBlocks.EMERALD_TINTED_GLASS);
+            event.accept(BGBlocks.DIAMOND_TINTED_GLASS);
+
+        } else if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(BGItems.PEARL);
+            event.accept(BGItems.RUBY);
+            event.accept(BGItems.SAPPHIRE);
+            event.accept(BGItems.TOPAZ);
+        }
     }
 
     private void setUpClient(final FMLClientSetupEvent event) {

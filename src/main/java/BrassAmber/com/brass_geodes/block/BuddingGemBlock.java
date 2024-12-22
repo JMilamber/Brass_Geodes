@@ -3,6 +3,7 @@ package BrassAmber.com.brass_geodes.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
@@ -32,33 +33,33 @@ public class BuddingGemBlock extends AmethystBlock {
       return PushReaction.DESTROY;
    }
 
-   public void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, Random random) {
-      if (random.nextInt(GROWTH_CHANCE) == 0) {
-         Direction direction = DIRECTIONS[random.nextInt(DIRECTIONS.length)];
-         BlockPos blockpos = blockPos.relative(direction);
-         BlockState blockstate = serverLevel.getBlockState(blockpos);
-         Block block = null;
-         if (canClusterGrowAtState(blockstate)) {
-            block = this.small;
-         } else if (blockstate.is(this.small) && blockstate.getValue(GemClusterBlock.FACING) == direction) {
-            block = this.medium;
-         } else if (blockstate.is(this.medium) && blockstate.getValue(GemClusterBlock.FACING) == direction) {
-            block = this.large;
-         } else if (blockstate.is(this.large) && blockstate.getValue(GemClusterBlock.FACING) == direction) {
-            block = this.cluster;
-         }
+    public void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource random) {
+        if (random.nextInt(GROWTH_CHANCE) == 0) {
+            Direction direction = DIRECTIONS[random.nextInt(DIRECTIONS.length)];
+            BlockPos blockpos = blockPos.relative(direction);
+            BlockState blockstate = serverLevel.getBlockState(blockpos);
+            Block block = null;
+            if (canClusterGrowAtState(blockstate)) {
+                block = this.small;
+            } else if (blockstate.is(this.small) && blockstate.getValue(GemClusterBlock.FACING) == direction) {
+                block = this.medium;
+            } else if (blockstate.is(this.medium) && blockstate.getValue(GemClusterBlock.FACING) == direction) {
+                block = this.large;
+            } else if (blockstate.is(this.large) && blockstate.getValue(GemClusterBlock.FACING) == direction) {
+                block = this.cluster;
+            }
 
-         if (block != null) {
-            BlockState blockstate1 = block.defaultBlockState().setValue(GemClusterBlock.FACING, direction)
-                    .setValue(GemClusterBlock.WATERLOGGED,
-                            blockstate.getFluidState().getType() == Fluids.WATER);
-            serverLevel.setBlockAndUpdate(blockpos, blockstate1);
-         }
+            if (block != null) {
+                BlockState blockstate1 = block.defaultBlockState().setValue(GemClusterBlock.FACING, direction)
+                        .setValue(GemClusterBlock.WATERLOGGED,
+                                blockstate.getFluidState().getType() == Fluids.WATER);
+                serverLevel.setBlockAndUpdate(blockpos, blockstate1);
+            }
 
-      }
-   }
+        }
+    }
 
-   public static boolean canClusterGrowAtState(BlockState blockState) {
-      return blockState.isAir() || blockState.is(Blocks.WATER) && blockState.getFluidState().getAmount() == 8;
-   }
+    public static boolean canClusterGrowAtState(BlockState blockState) {
+        return blockState.isAir() || blockState.is(Blocks.WATER) && blockState.getFluidState().getAmount() == 8;
+    }
 }
