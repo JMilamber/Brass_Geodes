@@ -1,24 +1,16 @@
 package BrassAmber.com.brass_geodes;
 
 import BrassAmber.com.brass_geodes.client.BGBlockRender;
-import BrassAmber.com.brass_geodes.config.BrassGeodesConfig;
-import BrassAmber.com.brass_geodes.world.features.BGCavePlacements;
-import BrassAmber.com.brass_geodes.world.features.BGConfiguredFeatures;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -36,10 +28,6 @@ public class BrassGeodes {
 
         BGBlocks.register(eventBus);
         BGBlocks.register(eventBus);
-        BGConfiguredFeatures.register(eventBus);
-        BGCavePlacements.register(eventBus);
-
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BrassGeodesConfig.SPEC, "brassgeodes-config.toml");
 
         eventBus.addListener(this::setUpClient);
         eventBus.addListener(this::addCreative);
@@ -98,19 +86,19 @@ public class BrassGeodes {
             event.accept(BGBlocks.GEMCORN_BRANCH);
             event.accept(BGBlocks.GEMCORN_TRUNK);
 
-            event.accept(BGBlocks.AMETHYST_LEAVES);
-            event.accept(BGBlocks.TOPAZ_LEAVES);
-            event.accept(BGBlocks.SAPPHIRE_LEAVES);
-            event.accept(BGBlocks.RUBY_LEAVES);
-            event.accept(BGBlocks.EMERALD_LEAVES);
-            event.accept(BGBlocks.DIAMOND_LEAVES);
+            event.accept(BGBlocks.AMETHYST_BRANCH);
+            event.accept(BGBlocks.TOPAZ_BRANCH);
+            event.accept(BGBlocks.SAPPHIRE_BRANCH);
+            event.accept(BGBlocks.RUBY_BRANCH);
+            event.accept(BGBlocks.EMERALD_BRANCH);
+            event.accept(BGBlocks.DIAMOND_BRANCH);
 
-            event.accept(BGBlocks.AMETHYST_GEMCORN_SAPLING);
-            event.accept(BGBlocks.TOPAZ_GEMCORN_SAPLING);
-            event.accept(BGBlocks.SAPPHIRE_GEMCORN_SAPLING);
-            event.accept(BGBlocks.RUBY_GEMCORN_SAPLING);
-            event.accept(BGBlocks.EMERALD_GEMCORN_SAPLING);
-            event.accept(BGBlocks.DIAMOND_GEMCORN_SAPLING);
+            event.accept(BGBlocks.AMETHYST_SAPLING);
+            event.accept(BGBlocks.TOPAZ_SAPLING);
+            event.accept(BGBlocks.SAPPHIRE_SAPLING);
+            event.accept(BGBlocks.RUBY_SAPLING);
+            event.accept(BGBlocks.EMERALD_SAPLING);
+            event.accept(BGBlocks.DIAMOND_SAPLING);
 
             event.accept(BGBlocks.TOPAZ_TINTED_GLASS);
             event.accept(BGBlocks.SAPPHIRE_TINTED_GLASS);
@@ -129,15 +117,6 @@ public class BrassGeodes {
     private void setUpClient(final FMLClientSetupEvent event) {
         BGBlockRender.setRenderLayers();
     }
-
-    /*@SubscribeEvent
-    public static  void onItemRegister(final RegistryEvent.Register<Item> event) {
-        for (Item item : event.getRegistry()) {
-            if (item.getRegistryName().equals(Items.AMETHYST_SHARD.getRegistryName())) {
-                event.getRegistry().register(BrassGeodesItems.Amethyst.asItem());
-            }
-        }
-    }*/
 
     @SubscribeEvent
     public static void onCommonSetup(FMLCommonSetupEvent event) {
