@@ -80,19 +80,19 @@ public class BGBlocks {
 
 
     public static final RegistryObject<Block> GEMCORN_BRANCH = registerBlock("gemcorn_branch",
-            () -> new GemcornBranch(5, 3, BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new GemcornBranch(5, 3, BlockBehaviour.Properties.of().mapColor(MapColor.STONE).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> AMETHYST_BRANCH = registerBlock("amethyst_branch",
-            () -> new GemcornBranch(5, 3, BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new GemcornBranch(5, 3, BlockBehaviour.Properties.of().mapColor(MapColor.STONE).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> TOPAZ_BRANCH = registerBlock("topaz_branch",
-            () -> new GemcornBranch(5, 3, BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new GemcornBranch(5, 3, BlockBehaviour.Properties.of().mapColor(MapColor.STONE).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> SAPPHIRE_BRANCH = registerBlock("sapphire_branch",
-            () -> new GemcornBranch(5, 3, BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new GemcornBranch(5, 3, BlockBehaviour.Properties.of().mapColor(MapColor.STONE).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> RUBY_BRANCH = registerBlock("ruby_branch",
-            () -> new GemcornBranch(5, 3, BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new GemcornBranch(5, 3, BlockBehaviour.Properties.of().mapColor(MapColor.STONE).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> EMERALD_BRANCH = registerBlock("emerald_branch",
-            () -> new GemcornBranch(5, 3, BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new GemcornBranch(5, 3, BlockBehaviour.Properties.of().mapColor(MapColor.STONE).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> DIAMOND_BRANCH = registerBlock("diamond_branch",
-            () -> new GemcornBranch(5, 3, BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
+            () -> new GemcornBranch(5, 3, BlockBehaviour.Properties.of().mapColor(MapColor.STONE).replaceable().noCollission().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> GEMCORN_TRUNK = registerBlock("gemcorn_trunk",
             () -> log(MapColor.DEEPSLATE, MapColor.STONE));
@@ -104,46 +104,46 @@ public class BGBlocks {
             ));
     public static final RegistryObject<Block> BUDDING_TOPAZ_TRUNK = registerBlock("budding_topaz_trunk",
             () -> new BuddingGemcornTrunk(
-                    BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops().pushReaction(PushReaction.DESTROY),
-                    Math.round(GemMaterial.TOPAZ.getRarity()), AMETHYST_BRANCH.get()
+                    BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops().pushReaction(PushReaction.DESTROY),
+                    Math.round(GemMaterial.TOPAZ.getRarity()), TOPAZ_BRANCH.get()
             ));
     public static final RegistryObject<Block> BUDDING_SAPPHIRE_TRUNK = registerBlock("budding_sapphire_trunk",
             () -> new BuddingGemcornTrunk(
-                    BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops().pushReaction(PushReaction.DESTROY),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops().pushReaction(PushReaction.DESTROY),
                     Math.round(GemMaterial.SAPPHIRE.getRarity()), SAPPHIRE_BRANCH.get()
             ));
     public static final RegistryObject<Block> BUDDING_RUBY_TRUNK = registerBlock("budding_ruby_trunk",
             () -> new BuddingGemcornTrunk(
-                    BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops().pushReaction(PushReaction.DESTROY),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops().pushReaction(PushReaction.DESTROY),
                     Math.round(GemMaterial.RUBY.getRarity()), RUBY_BRANCH.get()
             ));
     public static final RegistryObject<Block> BUDDING_EMERALD_TRUNK = registerBlock("budding_emerald_trunk",
             () -> new BuddingGemcornTrunk(
-                    BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops().pushReaction(PushReaction.DESTROY),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops().pushReaction(PushReaction.DESTROY),
                     Math.round(GemMaterial.EMERALD.getRarity()), EMERALD_BRANCH.get()
             ));
     public static final RegistryObject<Block> BUDDING_DIAMOND_TRUNK = registerBlock("budding_diamond_trunk",
             () -> new BuddingGemcornTrunk(
-                    BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops().pushReaction(PushReaction.DESTROY),
+                    BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_BLUE).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops().pushReaction(PushReaction.DESTROY),
                     Math.round(GemMaterial.DIAMOND.getRarity()), DIAMOND_BRANCH.get()
             ));
 
-    public static final RegistryObject<Block> AMETHYST_GEMCORN_SAPLING = registerBlock("amethyst_gemcorn_sapling",
+    public static final RegistryObject<Block> AMETHYST_SAPLING = registerBlock("amethyst_sapling",
             () -> new GemcornSaplingBlock(new GemcornTreeGrower(), BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak().sound(SoundType.COPPER)));
 
-    public static final RegistryObject<Block> TOPAZ_GEMCORN_SAPLING = registerBlock("topaz_gemcorn_sapling",
+    public static final RegistryObject<Block> TOPAZ_SAPLING = registerBlock("topaz_sapling",
             () -> new GemcornSaplingBlock(new GemcornTreeGrower(), BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak().sound(SoundType.COPPER)));
 
-    public static final RegistryObject<Block> RUBY_GEMCORN_SAPLING = registerBlock("ruby_gemcorn_sapling",
+    public static final RegistryObject<Block> SAPPHIRE_SAPLING = registerBlock("sapphire_sapling",
             () -> new GemcornSaplingBlock(new GemcornTreeGrower(), BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak().sound(SoundType.COPPER)));
 
-    public static final RegistryObject<Block> SAPPHIRE_GEMCORN_SAPLING = registerBlock("sapphire_gemcorn_sapling",
+    public static final RegistryObject<Block> RUBY_SAPLING = registerBlock("ruby_sapling",
             () -> new GemcornSaplingBlock(new GemcornTreeGrower(), BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak().sound(SoundType.COPPER)));
 
-    public static final RegistryObject<Block> EMERALD_GEMCORN_SAPLING = registerBlock("emerald_gemcorn_sapling",
+    public static final RegistryObject<Block> EMERALD_SAPLING = registerBlock("emerald_sapling",
             () -> new GemcornSaplingBlock(new GemcornTreeGrower(), BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak().sound(SoundType.COPPER)));
 
-    public static final RegistryObject<Block> DIAMOND_GEMCORN_SAPLING = registerBlock("diamond_gemcorn_sapling",
+    public static final RegistryObject<Block> DIAMOND_SAPLING = registerBlock("diamond_sapling",
             () -> new GemcornSaplingBlock(new GemcornTreeGrower(), BlockBehaviour.Properties.of().noCollission().randomTicks().instabreak().sound(SoundType.COPPER)));
 
     public static final RegistryObject<Block> TOPAZ_TINTED_GLASS = registerBlock("topaz_tinted_glass", () -> tintedGlass(MapColor.COLOR_ORANGE));
