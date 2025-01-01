@@ -1,10 +1,8 @@
 {
-  // Items
   "item.brass_geodes.ruby" : "Ruby",
   "item.brass_geodes.sapphire": "Sapphire",
   "item.brass_geodes.topaz": "Topaz",
 
-  // Blocks
   "block.brass_geodes.amethyst_block" : "Amethyst Block",
   "block.brass_geodes.ruby_block" : "Ruby Block",
   "block.brass_geodes.sapphire_block": "Sapphire Block",
@@ -16,11 +14,11 @@
   "block.brass_geodes.budding_sapphire": "Budding Sapphire",
   "block.brass_geodes.budding_topaz": "Budding Topaz",
 
-  "block.brass_geodes.geode_diamond": "Raw Diamond Block",
-  "block.brass_geodes.geode_emerald": "Raw Emerald Block",
-  "block.brass_geodes.geode_ruby" : "Raw Ruby Block",
-  "block.brass_geodes.geode_sapphire": "Raw Sapphire Block",
-  "block.brass_geodes.geode_topaz": "Raw Topaz Block",
+  "block.brass_geodes.raw_diamond": "Raw Diamond Block",
+  "block.brass_geodes.raw_emerald": "Raw Emerald Block",
+  "block.brass_geodes.raw_ruby" : "Raw Ruby Block",
+  "block.brass_geodes.raw_sapphire": "Raw Sapphire Block",
+  "block.brass_geodes.raw_topaz": "Raw Topaz Block",
 
   "block.brass_geodes.diamond_cluster": "Diamond Cluster",
   "block.brass_geodes.emerald_cluster": "Emerald Cluster",
@@ -53,16 +51,25 @@
   "block.brass_geodes.topaz_tinted_glass": "Topaz Tinted Glass",
 
   "block.brass_geodes.gemcorn_branch": "Gemcorn Branch",
-  "block.brass_geodes.topaz_leaves": "Topaz Leaves",
-  "block.brass_geodes.ruby_leaves": "Ruby Leaves",
-  "block.brass_geodes.sapphire_leaves": "Sapphire Leaves",
-  "block.brass_geodes.emerald_leaves": "Emerald Leaves",
-  "block.brass_geodes.diamond_leaves": "Diamond Leaves",
+  "block.brass_geodes.amethyst_branch": "Amethyst Branch",
+  "block.brass_geodes.topaz_branch": "Topaz Branch",
+  "block.brass_geodes.sapphire_branch": "Sapphire Branch",
+  "block.brass_geodes.ruby_branch": "Ruby Branch",
+  "block.brass_geodes.emerald_branch": "Emerald Branch",
+  "block.brass_geodes.diamond_branch": "Diamond Branch",
+
   "block.brass_geodes.gemcorn_trunk": "Gemcorn Trunk",
-  "block.brass_geodes.gemcorn_amethyst_sapling": "Amethyst Gemcorn Sapling",
-  "block.brass_geodes.gemcorn_topaz_sapling": "Gemcorn Topaz Sapling",
-  "block.brass_geodes.gemcorn_ruby_sapling": "Gemcorn Ruby Sapling",
-  "block.brass_geodes.gemcorn_sapphire_sapling": "Gemcorn Sapphire Sapling",
-  "block.brass_geodes.gemcorn_emerald_sapling": "Gemcorn Emerald Sapling",
-  "block.brass_geodes.gemcorn_diamond_sapling": "Gemcorn Diamond Sapling"
+  "block.brass_geodes.budding_amethyst_trunk": "Budding Amethyst Trunk",
+  "block.brass_geodes.budding_topaz_trunk": "Budding Topaz Trunk",
+  "block.brass_geodes.budding_sapphire_trunk": "Budding Sapphire Trunk",
+  "block.brass_geodes.budding_ruby_trunk": "Budding Ruby Trunk",
+  "block.brass_geodes.budding_emerald_trunk": "Budding Emerald Trunk",
+  "block.brass_geodes.budding_diamond_trunk": "Budding Diamond Trunk",
+
+  "block.brass_geodes.amethyst_sapling": "Amethyst Sapling",
+  "block.brass_geodes.topaz_sapling": "Topaz Sapling",
+  "block.brass_geodes.ruby_sapling": "Ruby Sapling",
+  "block.brass_geodes.sapphire_sapling": "Sapphire Sapling",
+  "block.brass_geodes.emerald_sapling": "Emerald Sapling",
+  "block.brass_geodes.diamond_sapling": "Diamond Sapling"
 }
