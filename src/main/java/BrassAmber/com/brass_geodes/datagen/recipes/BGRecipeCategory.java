@@ -1,7 +1,7 @@
 package BrassAmber.com.brass_geodes.datagen.recipes;
 
 public enum BGRecipeCategory {
-    BATTLE_TOWERS("babattletowers"),
+    BRASS_GEODES("brass_geodes"),
     BUILDING_BLOCKS("building_blocks"),
     DECORATIONS("decorations"),
     REDSTONE("redstone"),

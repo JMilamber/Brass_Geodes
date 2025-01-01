@@ -10,9 +10,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
-import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
@@ -35,6 +33,11 @@ public class BGBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BGBlocks.RAW_RUBY.get());
         this.dropSelf(BGBlocks.RAW_EMERALD.get());
         this.dropSelf(BGBlocks.RAW_DIAMOND.get());
+
+        this.dropSelf(BGBlocks.AMETHYST_BLOCK.get());
+        this.dropSelf(BGBlocks.TOPAZ_BLOCK.get());
+        this.dropSelf(BGBlocks.SAPPHIRE_BLOCK.get());
+        this.dropSelf(BGBlocks.RUBY_BLOCK.get());
 
         this.clusterDrop(BGBlocks.TOPAZ_CLUSTER.get(), BGItems.TOPAZ.get());
         this.clusterDrop(BGBlocks.SAPPHIRE_CLUSTER.get(), BGItems.SAPPHIRE.get());
@@ -67,13 +70,27 @@ public class BGBlockLootTables extends BlockLootSubProvider {
         this.noDrop(BGBlocks.BUDDING_DIAMOND.get());
 
         this.noDrop(BGBlocks.GEMCORN_BRANCH.get());
-        this.noDrop(BGBlocks.GEMCORN_TRUNK.get());
+
+        this.dropWhenSilkTouch(BGBlocks.GEMCORN_TRUNK.get());
+        this.noDrop(BGBlocks.BUDDING_AMETHYST_TRUNK.get());
+        this.noDrop(BGBlocks.BUDDING_TOPAZ_TRUNK.get());
+        this.noDrop(BGBlocks.BUDDING_SAPPHIRE_TRUNK.get());
+        this.noDrop(BGBlocks.BUDDING_RUBY_TRUNK.get());
+        this.noDrop(BGBlocks.BUDDING_EMERALD_TRUNK.get());
+        this.noDrop(BGBlocks.BUDDING_DIAMOND_TRUNK.get());
 
         this.dropSelf(BGBlocks.TOPAZ_TINTED_GLASS.get());
         this.dropSelf(BGBlocks.SAPPHIRE_TINTED_GLASS.get());
         this.dropSelf(BGBlocks.RUBY_TINTED_GLASS.get());
         this.dropSelf(BGBlocks.EMERALD_TINTED_GLASS.get());
         this.dropSelf(BGBlocks.DIAMOND_TINTED_GLASS.get());
+
+        this.dropSelf(BGBlocks.AMETHYST_SAPLING.get());
+        this.dropSelf(BGBlocks.TOPAZ_SAPLING.get());
+        this.dropSelf(BGBlocks.SAPPHIRE_SAPLING.get());
+        this.dropSelf(BGBlocks.RUBY_SAPLING.get());
+        this.dropSelf(BGBlocks.EMERALD_SAPLING.get());
+        this.dropSelf(BGBlocks.DIAMOND_SAPLING.get());
     }
 
     @Override
@@ -90,7 +107,15 @@ public class BGBlockLootTables extends BlockLootSubProvider {
     }
 
     protected void clusterDrop(Block block, ItemLike drop) {
-        createSilkTouchDispatchTable(block, LootItem.lootTableItem(drop).apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)).when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(ItemTags.CLUSTER_MAX_HARVESTABLES))).otherwise(this.applyExplosionDecay(block, LootItem.lootTableItem(drop).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))));
+        this.add(block,
+                createSilkTouchDispatchTable(block, LootItem.lootTableItem(drop).apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)).when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(ItemTags.CLUSTER_MAX_HARVESTABLES))).otherwise(this.applyExplosionDecay(block, LootItem.lootTableItem(drop).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))))
+        );
+    }
+
+    protected void silkTouchAndOtherWithFortune(Block block, ItemLike drop, float min, float max){
+        this.add(block,
+                createSilkTouchDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(drop).apply(SetItemCountFunction.setCount(UniformGenerator.between(min, max))).apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))))
+        );
     }
 
     protected void noDrop(Block block) {

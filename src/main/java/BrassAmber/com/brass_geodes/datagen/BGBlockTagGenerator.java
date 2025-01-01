@@ -21,6 +21,12 @@ public class BGBlockTagGenerator extends BlockTagsProvider  {
     protected void addTags(HolderLookup.Provider provider) {
         this.tag(BGTags.Blocks.GEMCORN_LOGS)
                 .add(BGBlocks.GEMCORN_TRUNK.get())
+                .add(BGBlocks.BUDDING_AMETHYST_TRUNK.get())
+                .add(BGBlocks.BUDDING_TOPAZ_TRUNK.get())
+                .add(BGBlocks.BUDDING_SAPPHIRE_TRUNK.get())
+                .add(BGBlocks.BUDDING_RUBY_TRUNK.get())
+                .add(BGBlocks.BUDDING_EMERALD_TRUNK.get())
+                .add(BGBlocks.BUDDING_DIAMOND_TRUNK.get());
     }
 
     @Override

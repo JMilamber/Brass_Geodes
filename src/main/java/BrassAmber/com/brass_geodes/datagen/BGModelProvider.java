@@ -1,5 +1,6 @@
 package BrassAmber.com.brass_geodes.datagen;
 
+import BrassAmber.com.brass_geodes.BGItems;
 import BrassAmber.com.brass_geodes.BrassGeodes;
 
 import net.minecraft.data.PackOutput;
@@ -17,6 +18,13 @@ public class BGModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        simpleItem(BGItems.TOPAZ);
+        simpleItem(BGItems.SAPPHIRE);
+        simpleItem(BGItems.RUBY);
+        simpleItem(BGItems.PEARL);
+
+        simpleItem(BGItems.TOPAZ);
+
     }
 
     private ItemModelBuilder emptyItem(ResourceLocation location) {

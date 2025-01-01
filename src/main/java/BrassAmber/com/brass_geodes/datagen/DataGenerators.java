@@ -21,10 +21,10 @@ public class DataGenerators {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        generator.addProvider(event.includeServer(), new BTRecipeProvider(packoutput));
+        generator.addProvider(event.includeServer(), new BGRecipeProvider(packoutput));
         generator.addProvider(event.includeServer(), new BGBlockTagGenerator(packoutput, lookupProvider, existingFileHelper));
 
         generator.addProvider(event.includeClient(), new BGModelProvider(packoutput,existingFileHelper));
-        generator.addProvider(event.includeClient(), new BTBlocksStateProvider(packoutput, existingFileHelper));
+        generator.addProvider(event.includeClient(), new BGBlocksStateProvider(packoutput, existingFileHelper));
     }
 }
