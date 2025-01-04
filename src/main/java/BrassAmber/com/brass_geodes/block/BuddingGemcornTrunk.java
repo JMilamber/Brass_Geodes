@@ -29,24 +29,21 @@ public class BuddingGemcornTrunk extends AmethystBlock {
 
 
     public void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
-        if (randomSource.nextInt(GROWTH_CHANCE / 2) == 0) {
-            Direction direction = DIRECTIONS[randomSource.nextInt(DIRECTIONS.length)];
-            BlockPos blockpos = blockPos.relative(direction);
-            BlockState blockstate = serverLevel.getBlockState(blockpos);
-            Block block = null;
-            if (canClusterGrowAtState(blockstate)) {
-                block = BGBlocks.GEMCORN_BRANCH.get();
-            } else if (blockstate.is(BGBlocks.GEMCORN_BRANCH.get()) && blockstate.getValue(GemcornBranch.FACING) == direction) {
-                if (randomSource.nextInt(GROWTH_CHANCE) == 0) {
-                    block = gemBranch;
-                }
+        Direction direction = DIRECTIONS[randomSource.nextInt(DIRECTIONS.length)];
+        BlockPos blockpos = blockPos.relative(direction);
+        BlockState blockstate = serverLevel.getBlockState(blockpos);
+        Block block = null;
+        if (canClusterGrowAtState(blockstate)) {
+            block = BGBlocks.GEMCORN_BRANCH.get();
+        }
+        if (blockstate.is(BGBlocks.GEMCORN_BRANCH.get()) && blockstate.getValue(GemcornBranch.FACING) == direction) {
+            if (randomSource.nextInt(GROWTH_CHANCE / 8) == 0) {
+                block = gemBranch;
             }
-
-            if (block != null) {
-                BlockState blockstate1 = block.defaultBlockState().setValue(GemcornBranch.FACING, direction).setValue(GemcornBranch.WATERLOGGED, Boolean.valueOf(blockstate.getFluidState().getType() == Fluids.WATER));
-                serverLevel.setBlockAndUpdate(blockpos, blockstate1);
-            }
-
+        }
+        if (block != null) {
+            BlockState blockstate1 = block.defaultBlockState().setValue(GemcornBranch.FACING, direction).setValue(GemcornBranch.WATERLOGGED, Boolean.valueOf(blockstate.getFluidState().getType() == Fluids.WATER));
+            serverLevel.setBlockAndUpdate(blockpos, blockstate1);
         }
     }
 
