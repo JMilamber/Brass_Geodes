@@ -1,6 +1,7 @@
 package BrassAmber.com.brass_geodes;
 
 import BrassAmber.com.brass_geodes.client.BGBlockRender;
+import BrassAmber.com.brass_geodes.worldgen.tree.BGTreeDecorators;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.common.MinecraftForge;
@@ -26,8 +27,9 @@ public class BrassGeodes {
         // Register the setup method for modloading
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        BGItems.register(eventBus);
         BGBlocks.register(eventBus);
-        BGBlocks.register(eventBus);
+        BGTreeDecorators.register(eventBus);
 
         eventBus.addListener(this::setUpClient);
         eventBus.addListener(this::addCreative);
@@ -42,11 +44,11 @@ public class BrassGeodes {
 
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 
-            event.accept(BGBlocks.RAW_TOPAZ);
-            event.accept(BGBlocks.RAW_SAPPHIRE);
-            event.accept(BGBlocks.RAW_RUBY);
-            event.accept(BGBlocks.RAW_DIAMOND);
-            event.accept(BGBlocks.RAW_EMERALD);
+            event.accept(BGBlocks.RAW_TOPAZ_BLOCK);
+            event.accept(BGBlocks.RAW_SAPPHIRE_BLOCK);
+            event.accept(BGBlocks.RAW_RUBY_BLOCK);
+            event.accept(BGBlocks.RAW_DIAMOND_BLOCK);
+            event.accept(BGBlocks.RAW_EMERALD_BLOCK);
 
             event.accept(BGBlocks.AMETHYST_BLOCK);
             event.accept(BGBlocks.TOPAZ_BLOCK);
