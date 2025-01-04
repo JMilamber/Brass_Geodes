@@ -28,11 +28,11 @@ public class BGBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        this.dropSelf(BGBlocks.RAW_TOPAZ.get());
-        this.dropSelf(BGBlocks.RAW_SAPPHIRE.get());
-        this.dropSelf(BGBlocks.RAW_RUBY.get());
-        this.dropSelf(BGBlocks.RAW_EMERALD.get());
-        this.dropSelf(BGBlocks.RAW_DIAMOND.get());
+        this.dropSelf(BGBlocks.RAW_TOPAZ_BLOCK.get());
+        this.dropSelf(BGBlocks.RAW_SAPPHIRE_BLOCK.get());
+        this.dropSelf(BGBlocks.RAW_RUBY_BLOCK.get());
+        this.dropSelf(BGBlocks.RAW_EMERALD_BLOCK.get());
+        this.dropSelf(BGBlocks.RAW_DIAMOND_BLOCK.get());
 
         this.dropSelf(BGBlocks.AMETHYST_BLOCK.get());
         this.dropSelf(BGBlocks.TOPAZ_BLOCK.get());
@@ -78,6 +78,31 @@ public class BGBlockLootTables extends BlockLootSubProvider {
         this.noDrop(BGBlocks.BUDDING_RUBY_TRUNK.get());
         this.noDrop(BGBlocks.BUDDING_EMERALD_TRUNK.get());
         this.noDrop(BGBlocks.BUDDING_DIAMOND_TRUNK.get());
+
+        this.silkTouchAndOtherWithFortune(
+                BGBlocks.AMETHYST_BRANCH.get(), Items.AMETHYST_SHARD,
+                1, 3
+        );
+        this.silkTouchAndOtherWithFortune(
+                BGBlocks.TOPAZ_BRANCH.get(), BGItems.TOPAZ.get(),
+                1, 3
+        );
+        this.silkTouchAndOtherWithFortune(
+                BGBlocks.SAPPHIRE_BRANCH.get(), BGItems.SAPPHIRE.get(),
+                1, 3
+        );
+        this.silkTouchAndOtherWithFortune(
+                BGBlocks.RUBY_BRANCH.get(), BGItems.RUBY.get(),
+                1, 3
+        );
+        this.silkTouchAndOtherWithFortune(
+                BGBlocks.EMERALD_BRANCH.get(), Items.EMERALD,
+                1, 2
+        );
+        this.silkTouchAndOtherWithFortune(
+                BGBlocks.DIAMOND_BRANCH.get(), Items.DIAMOND,
+                1, 1
+        );
 
         this.dropSelf(BGBlocks.TOPAZ_TINTED_GLASS.get());
         this.dropSelf(BGBlocks.SAPPHIRE_TINTED_GLASS.get());

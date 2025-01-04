@@ -7,11 +7,11 @@
     "brass_geodes:budding_sapphire",
     "brass_geodes:budding_topaz",
 
-    "brass_geodes:geode_diamond",
-    "brass_geodes:geode_emerald",
-    "brass_geodes:geode_ruby",
-    "brass_geodes:geode_sapphire",
-    "brass_geodes:geode_topaz",
+    "brass_geodes:raw_diamond",
+    "brass_geodes:raw_emerald",
+    "brass_geodes:raw_ruby",
+    "brass_geodes:raw_sapphire",
+    "brass_geodes:raw_topaz",
 
     "brass_geodes:amethyst_block",
     "brass_geodes:ruby_block",

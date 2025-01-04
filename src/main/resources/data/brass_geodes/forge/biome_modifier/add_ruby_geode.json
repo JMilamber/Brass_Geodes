@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#minecraft:has_structure/village_desert",
-  "features": "brass_geodes:ruby_geode_placed",
-  "step": "underground_ores"
-}

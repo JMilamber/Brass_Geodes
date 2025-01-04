@@ -66,10 +66,10 @@
   "block.brass_geodes.budding_emerald_trunk": "Budding Emerald Trunk",
   "block.brass_geodes.budding_diamond_trunk": "Budding Diamond Trunk",
 
-  "block.brass_geodes.amethyst_sapling": "Amethyst Sapling",
-  "block.brass_geodes.topaz_sapling": "Topaz Sapling",
-  "block.brass_geodes.ruby_sapling": "Ruby Sapling",
-  "block.brass_geodes.sapphire_sapling": "Sapphire Sapling",
-  "block.brass_geodes.emerald_sapling": "Emerald Sapling",
-  "block.brass_geodes.diamond_sapling": "Diamond Sapling"
+  "block.brass_geodes.amethyst_sapling": "Amethyst Gemcorn",
+  "block.brass_geodes.topaz_sapling": "Topaz Gemcorn",
+  "block.brass_geodes.ruby_sapling": "Ruby Gemcorn",
+  "block.brass_geodes.sapphire_sapling": "Sapphire Gemcorn",
+  "block.brass_geodes.emerald_sapling": "Emerald Gemcorn",
+  "block.brass_geodes.diamond_sapling": "Diamond Gemcorn"
 }

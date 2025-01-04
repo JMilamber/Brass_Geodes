@@ -5,6 +5,7 @@ import BrassAmber.com.brass_geodes.BrassGeodes;
 import BrassAmber.com.brass_geodes.util.BGTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -27,6 +28,9 @@ public class BGBlockTagGenerator extends BlockTagsProvider  {
                 .add(BGBlocks.BUDDING_RUBY_TRUNK.get())
                 .add(BGBlocks.BUDDING_EMERALD_TRUNK.get())
                 .add(BGBlocks.BUDDING_DIAMOND_TRUNK.get());
+
+        this.tag(BGTags.Blocks.GEMCORN_CAN_GROW_THROUGH)
+                .add(Blocks.CAVE_AIR);
     }
 
     @Override
