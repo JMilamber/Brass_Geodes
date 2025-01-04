@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "brass_geodes:block/medium_emerald_bud"
+  }
+}

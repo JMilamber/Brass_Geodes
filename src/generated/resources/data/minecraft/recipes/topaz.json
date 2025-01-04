@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "brass_geodes:raw_topaz"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "brass_geodes:topaz"
+  }
+}

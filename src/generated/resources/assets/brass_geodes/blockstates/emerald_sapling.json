@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "age=0,stage=0": {
+      "model": "brass_geodes:block/emerald_sapling0"
+    },
+    "age=0,stage=1": {
+      "model": "brass_geodes:block/emerald_sapling0"
+    },
+    "age=1,stage=0": {
+      "model": "brass_geodes:block/emerald_sapling1"
+    },
+    "age=1,stage=1": {
+      "model": "brass_geodes:block/emerald_sapling1"
+    },
+    "age=2,stage=0": {
+      "model": "brass_geodes:block/emerald_sapling2"
+    },
+    "age=2,stage=1": {
+      "model": "brass_geodes:block/emerald_sapling2"
+    }
+  }
+}
