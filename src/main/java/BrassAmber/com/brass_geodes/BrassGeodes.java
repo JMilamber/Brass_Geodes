@@ -39,8 +39,7 @@ public class BrassGeodes {
     }
 
     // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event)
-    {
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 
@@ -88,6 +87,14 @@ public class BrassGeodes {
             event.accept(BGBlocks.GEMCORN_BRANCH);
             event.accept(BGBlocks.GEMCORN_TRUNK);
 
+            event.accept(BGBlocks.BUDDING_AMETHYST_TRUNK);
+            event.accept(BGBlocks.BUDDING_TOPAZ_TRUNK);
+            event.accept(BGBlocks.BUDDING_SAPPHIRE_TRUNK);
+            event.accept(BGBlocks.BUDDING_RUBY_TRUNK);
+            event.accept(BGBlocks.BUDDING_EMERALD_TRUNK);
+            event.accept(BGBlocks.BUDDING_DIAMOND_TRUNK);
+
+
             event.accept(BGBlocks.AMETHYST_BRANCH);
             event.accept(BGBlocks.TOPAZ_BRANCH);
             event.accept(BGBlocks.SAPPHIRE_BRANCH);
@@ -102,6 +109,20 @@ public class BrassGeodes {
             event.accept(BGBlocks.EMERALD_SAPLING);
             event.accept(BGBlocks.DIAMOND_SAPLING);
 
+        } else if (event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
+
+            event.accept(BGBlocks.TOPAZ_TINTED_GLASS);
+            event.accept(BGBlocks.SAPPHIRE_TINTED_GLASS);
+            event.accept(BGBlocks.RUBY_TINTED_GLASS);
+            event.accept(BGBlocks.EMERALD_TINTED_GLASS);
+            event.accept(BGBlocks.DIAMOND_TINTED_GLASS);
+
+        } else if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+
+            event.accept(BGBlocks.AMETHYST_BLOCK);
+            event.accept(BGBlocks.TOPAZ_BLOCK);
+            event.accept(BGBlocks.SAPPHIRE_BLOCK);
+            event.accept(BGBlocks.RUBY_BLOCK);
             event.accept(BGBlocks.TOPAZ_TINTED_GLASS);
             event.accept(BGBlocks.SAPPHIRE_TINTED_GLASS);
             event.accept(BGBlocks.RUBY_TINTED_GLASS);
