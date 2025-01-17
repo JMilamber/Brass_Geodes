@@ -3,14 +3,10 @@ package BrassAmber.com.brass_geodes.datagen;
 import BrassAmber.com.brass_geodes.BGBlocks;
 import BrassAmber.com.brass_geodes.BrassGeodes;
 import BrassAmber.com.brass_geodes.block.GemcornSaplingBlock;
-import com.google.common.base.Supplier;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.AttachFace;
-import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -19,8 +15,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Function;
-
-import static net.minecraftforge.client.model.generators.ModelProvider.ITEM_FOLDER;
 
 public class BGBlocksStateProvider extends BlockStateProvider {
     public BGBlocksStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -36,10 +30,10 @@ public class BGBlocksStateProvider extends BlockStateProvider {
         cubeBlock(BGBlocks.RAW_EMERALD_BLOCK);
         cubeBlock(BGBlocks.RAW_DIAMOND_BLOCK);
 
-        cubeBlock(BGBlocks.AMETHYST_BLOCK);
-        cubeBlock(BGBlocks.TOPAZ_BLOCK);
-        cubeBlock(BGBlocks.SAPPHIRE_BLOCK);
-        cubeBlock(BGBlocks.RUBY_BLOCK);
+        cubeBlock(BGBlocks.AMETHYST_GEM_BLOCK);
+        cubeBlock(BGBlocks.TOPAZ_GEM_BLOCK);
+        cubeBlock(BGBlocks.SAPPHIRE_GEM_BLOCK);
+        cubeBlock(BGBlocks.RUBY_GEM_BLOCK);
 
         clusterBlock(BGBlocks.TOPAZ_CLUSTER);
         clusterBlock(BGBlocks.SAPPHIRE_CLUSTER);
