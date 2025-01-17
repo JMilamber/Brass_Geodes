@@ -47,7 +47,7 @@ public class BuddingGemcornTrunk extends AmethystBlock {
             }
         }
         if (block != null) {
-            BlockState blockstate1 = block.defaultBlockState().setValue(GemcornBranch.FACING, direction).setValue(GemcornBranch.WATERLOGGED, Boolean.valueOf(blockstate.getFluidState().getType() == Fluids.WATER));
+            BlockState blockstate1 = block.defaultBlockState().setValue(GemcornBranch.FACING, direction).setValue(GemcornBranch.WATERLOGGED, blockstate.getFluidState().getType() == Fluids.WATER);
             serverLevel.setBlockAndUpdate(blockpos, blockstate1);
         }
     }

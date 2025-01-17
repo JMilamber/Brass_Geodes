@@ -55,10 +55,6 @@ public class GemcornSaplingBlock extends SaplingBlock {
         return blockState.getValue(AGE) == MAX_AGE;
     }
 
-    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState, boolean bool) {
-        return true;
-    }
-
     public boolean isBonemealSuccess(Level level, RandomSource randomSource, BlockPos blockPos, BlockState blockState) {
         // return (double)level.random.nextFloat() < 0.1D;
         return true;
