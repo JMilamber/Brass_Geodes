@@ -1,18 +1,16 @@
-package BrassAmber.com.brass_geodes.worldgen.tree;
+package BrassAmber.com.brass_geodes.worldgen.tree.custom;
 
 import BrassAmber.com.brass_geodes.util.BGUtil;
+import BrassAmber.com.brass_geodes.worldgen.tree.BGTreeDecorators;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CocoaBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 
 import java.util.List;
-import java.util.stream.Stream;
 
 public class BuddingGemcornDecorator extends TreeDecorator {
     public static final Codec<BuddingGemcornDecorator> CODEC = RecordCodecBuilder.create((decoratorInstance) ->
@@ -40,8 +38,8 @@ public class BuddingGemcornDecorator extends TreeDecorator {
         BlockPos startPos = logList.get(0);
         logList.forEach((logPos) -> {
             float nextChance = randomsource.nextFloat();
-            if ((BGUtil.distanceTo3D(startPos, logPos) > 4 && nextChance <= this.buddingProbability)
-                    || (BGUtil.distanceTo2D(startPos, logPos) > 0.5 && nextChance <= .9)
+            if ((BGUtil.distanceTo3D(startPos, logPos) > 6 && nextChance <= this.buddingProbability)
+                    || (BGUtil.distanceTo2D(startPos, logPos) > 0.5)
             ) {
                 context.setBlock(logPos, buddingBlock);
             }

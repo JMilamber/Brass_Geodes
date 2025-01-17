@@ -2,7 +2,7 @@ package BrassAmber.com.brass_geodes.worldgen;
 
 import BrassAmber.com.brass_geodes.BGBlocks;
 import BrassAmber.com.brass_geodes.BrassGeodes;
-import BrassAmber.com.brass_geodes.worldgen.tree.BuddingGemcornDecorator;
+import BrassAmber.com.brass_geodes.worldgen.tree.custom.BuddingGemcornDecorator;
 import BrassAmber.com.brass_geodes.worldgen.tree.custom.GemcornTrunkPlacer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -25,11 +25,8 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.CherryTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 
 import java.util.List;
-import java.util.OptionalInt;
 
 public class BGConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> AMETHYST_GEMCORN_KEY = registerKey("amethyst_gemcorn");
@@ -103,10 +100,10 @@ public class BGConfiguredFeatures {
     public static void registerGemcornTree(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key,  Block buddingBlock) {
         register(context, key, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(BGBlocks.GEMCORN_TRUNK.get()),
-                        new GemcornTrunkPlacer(9, 0, 0),
+                        new GemcornTrunkPlacer(8, 0, 0),
                         BlockStateProvider.simple(Blocks.AIR),
                         new FancyFoliagePlacer(ConstantInt.of(1), ConstantInt.of(2), 1),
-                        new TwoLayersFeatureSize(1, 1, 1)
+                        new TwoLayersFeatureSize(1, 0, 1)
                 ).decorators(
                         List.of(new BuddingGemcornDecorator(0.6F, buddingBlock.defaultBlockState()))
                 ).ignoreVines().dirt(BlockStateProvider.simple(Blocks.STONE)).build()

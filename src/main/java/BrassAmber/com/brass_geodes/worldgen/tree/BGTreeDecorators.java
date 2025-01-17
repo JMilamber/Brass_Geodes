@@ -1,6 +1,7 @@
 package BrassAmber.com.brass_geodes.worldgen.tree;
 
 import BrassAmber.com.brass_geodes.BrassGeodes;
+import BrassAmber.com.brass_geodes.worldgen.tree.custom.BuddingGemcornDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
