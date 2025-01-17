@@ -34,10 +34,15 @@ public class BuddingGemcornTrunk extends AmethystBlock {
         BlockState blockstate = serverLevel.getBlockState(blockpos);
         Block block = null;
         if (canClusterGrowAtState(blockstate)) {
-            block = BGBlocks.GEMCORN_BRANCH.get();
+            if (randomSource.nextInt(GROWTH_CHANCE / 8) == 0) {
+                block = gemBranch;
+            } else {
+                block = BGBlocks.GEMCORN_BRANCH.get();
+            }
+
         }
         if (blockstate.is(BGBlocks.GEMCORN_BRANCH.get()) && blockstate.getValue(GemcornBranch.FACING) == direction) {
-            if (randomSource.nextInt(GROWTH_CHANCE / 8) == 0) {
+            if (randomSource.nextInt(GROWTH_CHANCE / 12) == 0) {
                 block = gemBranch;
             }
         }

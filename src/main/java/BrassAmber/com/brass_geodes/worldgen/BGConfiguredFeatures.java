@@ -3,6 +3,7 @@ package BrassAmber.com.brass_geodes.worldgen;
 import BrassAmber.com.brass_geodes.BGBlocks;
 import BrassAmber.com.brass_geodes.BrassGeodes;
 import BrassAmber.com.brass_geodes.worldgen.tree.BuddingGemcornDecorator;
+import BrassAmber.com.brass_geodes.worldgen.tree.custom.GemcornTrunkPlacer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
@@ -25,8 +26,10 @@ import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSi
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.CherryTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 
 import java.util.List;
+import java.util.OptionalInt;
 
 public class BGConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> AMETHYST_GEMCORN_KEY = registerKey("amethyst_gemcorn");
@@ -100,16 +103,10 @@ public class BGConfiguredFeatures {
     public static void registerGemcornTree(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key,  Block buddingBlock) {
         register(context, key, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(BGBlocks.GEMCORN_TRUNK.get()),
-                        new CherryTrunkPlacer(
-                                5, 1, 0,
-                                ConstantInt.of(3),
-                                UniformInt.of(2, 2),
-                                UniformInt.of(-3, -2),
-                                ConstantInt.of(-1)
-                        ),
+                        new GemcornTrunkPlacer(9, 0, 0),
                         BlockStateProvider.simple(Blocks.AIR),
                         new FancyFoliagePlacer(ConstantInt.of(1), ConstantInt.of(2), 1),
-                        new TwoLayersFeatureSize(1, 0, 2)
+                        new TwoLayersFeatureSize(1, 1, 1)
                 ).decorators(
                         List.of(new BuddingGemcornDecorator(0.6F, buddingBlock.defaultBlockState()))
                 ).ignoreVines().dirt(BlockStateProvider.simple(Blocks.STONE)).build()
@@ -128,10 +125,10 @@ public class BGConfiguredFeatures {
                         buds,
                         BlockTags.FEATURES_CANNOT_REPLACE , BlockTags.GEODE_INVALID_BLOCKS),
                         new GeodeLayerSettings(1.7D, 2.2D, 3.2D, 4.2D),
-                        new GeodeCrackSettings(0.95D, 2.0D, 2), 0.35D, 0.083D,
-                        true, UniformInt.of(4, 6),
+                        new GeodeCrackSettings(0.35D, 1.0D, 1), 0.35D, 0.083D,
+                        false, UniformInt.of(4, 6),
                         UniformInt.of(3, 6), UniformInt.of(1, 2),
-                        -16, 16, 0.05D, 1)
+                        -14, 14, 0.05D, 1)
         );
     }
 
@@ -146,10 +143,10 @@ public class BGConfiguredFeatures {
                         buds,
                         BlockTags.FEATURES_CANNOT_REPLACE , BlockTags.GEODE_INVALID_BLOCKS),
                         new GeodeLayerSettings(1.7D, 2.2D, 3.2D, 4.2D),
-                        new GeodeCrackSettings(0.85D, 2.0D, 2), 0.35D, 0.083D,
-                        true, UniformInt.of(2, 4),
+                        new GeodeCrackSettings(0.25D, 1.0D, 1), 0.35D, 0.083D,
+                        false, UniformInt.of(2, 4),
                         UniformInt.of(3, 6), UniformInt.of(1, 2),
-                        -8, 8, 0.05D, 1)
+                        -12, 12, 0.05D, 1)
         );
     }
 

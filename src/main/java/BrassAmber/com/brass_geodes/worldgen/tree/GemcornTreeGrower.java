@@ -4,13 +4,9 @@ import BrassAmber.com.brass_geodes.util.GemMaterial;
 import BrassAmber.com.brass_geodes.worldgen.BGConfiguredFeatures;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import org.jetbrains.annotations.Nullable;
-
-import static BrassAmber.com.brass_geodes.BGBlocks.AMETHYST_BLOCK;
 
 public class GemcornTreeGrower extends AbstractTreeGrower {
     public final GemMaterial KEY;

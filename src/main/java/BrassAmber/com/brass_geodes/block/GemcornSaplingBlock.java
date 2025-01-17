@@ -19,12 +19,10 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 public class GemcornSaplingBlock extends SaplingBlock {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
     public static final int MAX_AGE = BlockStateProperties.MAX_AGE_2;
-    private final AbstractTreeGrower treeGrower2;
 
 
     public GemcornSaplingBlock(AbstractTreeGrower treeGrower, Properties properties) {
         super(treeGrower, properties);
-        this.treeGrower2 = treeGrower;
         this.registerDefaultState(this.stateDefinition.any().setValue(STAGE, 0).setValue(AGE, 0));
     }
 
@@ -37,26 +35,20 @@ public class GemcornSaplingBlock extends SaplingBlock {
     }
 
     public void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
-        if (randomSource.nextInt(7) == 0) {
-            if (!isFullyGrown(blockState)) {
+        if (isFullyGrown(blockState)) {
+            this.advanceTree(serverLevel, blockPos, blockState, randomSource);
+        } else {
+            if (randomSource.nextFloat() < .4) {
                 serverLevel.setBlock(blockPos, blockState.cycle(AGE), 4);
-            } else {
-                this.advanceTree(serverLevel, blockPos, blockState, randomSource);
             }
         }
+
+        BrassGeodes.LOGGER.info("Gemcorn Tree Age: {}   Stage: {}", blockState.getValue(AGE), blockState.getValue(STAGE));
+
     }
 
     public IntegerProperty getAgeProperty() {
         return AGE;
-    }
-
-    public void advanceTree(ServerLevel serverLevel, BlockPos blockPos, BlockState blockState, RandomSource randomSource) {
-        BrassGeodes.LOGGER.info("Gemcorn Tree Age: {}   Stage: {}", blockState.getValue(AGE), blockState.getValue(STAGE));
-        if (blockState.getValue(STAGE) == 0) {
-            serverLevel.setBlock(blockPos, blockState.cycle(STAGE), 4);
-        } else {
-            this.treeGrower2.growTree(serverLevel, serverLevel.getChunkSource().getGenerator(), blockPos, blockState, randomSource);
-        }
     }
 
     private static boolean isFullyGrown(BlockState blockState) {

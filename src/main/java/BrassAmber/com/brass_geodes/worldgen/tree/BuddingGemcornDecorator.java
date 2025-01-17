@@ -39,7 +39,10 @@ public class BuddingGemcornDecorator extends TreeDecorator {
         List<BlockPos> logList = context.logs();
         BlockPos startPos = logList.get(0);
         logList.forEach((logPos) -> {
-            if (randomsource.nextFloat() <= this.buddingProbability && BGUtil.distanceTo3D(startPos, logPos) > 3) {
+            float nextChance = randomsource.nextFloat();
+            if ((BGUtil.distanceTo3D(startPos, logPos) > 4 && nextChance <= this.buddingProbability)
+                    || (BGUtil.distanceTo2D(startPos, logPos) > 0.5 && nextChance <= .9)
+            ) {
                 context.setBlock(logPos, buddingBlock);
             }
         });
