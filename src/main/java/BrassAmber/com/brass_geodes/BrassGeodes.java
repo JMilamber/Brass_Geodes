@@ -2,6 +2,7 @@ package BrassAmber.com.brass_geodes;
 
 import BrassAmber.com.brass_geodes.client.BGBlockRender;
 import BrassAmber.com.brass_geodes.worldgen.tree.BGTreeDecorators;
+import BrassAmber.com.brass_geodes.worldgen.tree.BGTrunkPlacerTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.common.MinecraftForge;
@@ -30,6 +31,7 @@ public class BrassGeodes {
         BGItems.register(eventBus);
         BGBlocks.register(eventBus);
         BGTreeDecorators.register(eventBus);
+        BGTrunkPlacerTypes.register(eventBus);
 
         eventBus.addListener(this::setUpClient);
         eventBus.addListener(this::addCreative);
@@ -49,10 +51,10 @@ public class BrassGeodes {
             event.accept(BGBlocks.RAW_DIAMOND_BLOCK);
             event.accept(BGBlocks.RAW_EMERALD_BLOCK);
 
-            event.accept(BGBlocks.AMETHYST_BLOCK);
-            event.accept(BGBlocks.TOPAZ_BLOCK);
-            event.accept(BGBlocks.SAPPHIRE_BLOCK);
-            event.accept(BGBlocks.RUBY_BLOCK);
+            event.accept(BGBlocks.AMETHYST_GEM_BLOCK);
+            event.accept(BGBlocks.TOPAZ_GEM_BLOCK);
+            event.accept(BGBlocks.SAPPHIRE_GEM_BLOCK);
+            event.accept(BGBlocks.RUBY_GEM_BLOCK);
 
             event.accept(BGBlocks.TOPAZ_CLUSTER);
             event.accept(BGBlocks.SAPPHIRE_CLUSTER);
@@ -119,10 +121,10 @@ public class BrassGeodes {
 
         } else if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
 
-            event.accept(BGBlocks.AMETHYST_BLOCK);
-            event.accept(BGBlocks.TOPAZ_BLOCK);
-            event.accept(BGBlocks.SAPPHIRE_BLOCK);
-            event.accept(BGBlocks.RUBY_BLOCK);
+            event.accept(BGBlocks.AMETHYST_GEM_BLOCK);
+            event.accept(BGBlocks.TOPAZ_GEM_BLOCK);
+            event.accept(BGBlocks.SAPPHIRE_GEM_BLOCK);
+            event.accept(BGBlocks.RUBY_GEM_BLOCK);
             event.accept(BGBlocks.TOPAZ_TINTED_GLASS);
             event.accept(BGBlocks.SAPPHIRE_TINTED_GLASS);
             event.accept(BGBlocks.RUBY_TINTED_GLASS);
