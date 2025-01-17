@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ruby": {
+    "has_sapphire": {
       "conditions": {
         "items": [
           {
             "items": [
-              "brass_geodes:ruby"
+              "brass_geodes:sapphire"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:raw_ruby"
+        "recipe": "minecraft:sapphire_gem_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_ruby",
+      "has_sapphire",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:raw_ruby"
+      "minecraft:sapphire_gem_block"
     ]
   },
   "sends_telemetry_event": false

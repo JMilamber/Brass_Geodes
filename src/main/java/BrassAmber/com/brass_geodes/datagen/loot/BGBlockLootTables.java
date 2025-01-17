@@ -34,10 +34,10 @@ public class BGBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BGBlocks.RAW_EMERALD_BLOCK.get());
         this.dropSelf(BGBlocks.RAW_DIAMOND_BLOCK.get());
 
-        this.dropSelf(BGBlocks.AMETHYST_BLOCK.get());
-        this.dropSelf(BGBlocks.TOPAZ_BLOCK.get());
-        this.dropSelf(BGBlocks.SAPPHIRE_BLOCK.get());
-        this.dropSelf(BGBlocks.RUBY_BLOCK.get());
+        this.dropSelf(BGBlocks.AMETHYST_GEM_BLOCK.get());
+        this.dropSelf(BGBlocks.TOPAZ_GEM_BLOCK.get());
+        this.dropSelf(BGBlocks.SAPPHIRE_GEM_BLOCK.get());
+        this.dropSelf(BGBlocks.RUBY_GEM_BLOCK.get());
 
         this.clusterDrop(BGBlocks.TOPAZ_CLUSTER.get(), BGItems.TOPAZ.get());
         this.clusterDrop(BGBlocks.SAPPHIRE_CLUSTER.get(), BGItems.SAPPHIRE.get());
@@ -116,6 +116,7 @@ public class BGBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(BGBlocks.RUBY_SAPLING.get());
         this.dropSelf(BGBlocks.EMERALD_SAPLING.get());
         this.dropSelf(BGBlocks.DIAMOND_SAPLING.get());
+
     }
 
     @Override

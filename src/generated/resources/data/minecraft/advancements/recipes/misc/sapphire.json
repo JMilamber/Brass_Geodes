@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_raw_sapphire": {
+    "has_sapphire_gem_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "brass_geodes:raw_sapphire"
+              "brass_geodes:sapphire_gem_block"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_raw_sapphire",
+      "has_sapphire_gem_block",
       "has_the_recipe"
     ]
   ],

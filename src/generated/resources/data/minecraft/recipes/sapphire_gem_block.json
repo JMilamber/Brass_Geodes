@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "brass_geodes:topaz"
+      "item": "brass_geodes:sapphire"
     }
   },
   "pattern": [
@@ -12,7 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "brass_geodes:raw_topaz"
+    "item": "brass_geodes:sapphire_gem_block"
   },
   "show_notification": true
 }

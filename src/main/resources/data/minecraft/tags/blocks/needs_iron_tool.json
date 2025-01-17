@@ -13,9 +13,9 @@
     "brass_geodes:raw_sapphire",
     "brass_geodes:raw_topaz",
 
-    "brass_geodes:amethyst_block",
-    "brass_geodes:ruby_block",
-    "brass_geodes:sapphire_block",
-    "brass_geodes:topaz_block"
+    "brass_geodes:amethyst_gem_block",
+    "brass_geodes:ruby_gem_block",
+    "brass_geodes:sapphire_gem_block",
+    "brass_geodes:topaz_gem_block"
   ]
 }

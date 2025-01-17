@@ -5,10 +5,10 @@
   "item.brass_geodes.topaz": "Topaze",
 
   // Blocks
-  "block.brass_geodes.amethyst_block" : "Bloc d'améthyste",
-  "block.brass_geodes.ruby_block" : "Bloc de rubis",
-  "block.brass_geodes.sapphire_block": "Bloc de saphir",
-  "block.brass_geodes.topaz_block": "Bloc de topaze ",
+  "block.brass_geodes.amethyst_gem_block" : "Bloc d'améthyste",
+  "block.brass_geodes.ruby_gem_block" : "Bloc de rubis",
+  "block.brass_geodes.sapphire_gem_block": "Bloc de saphir",
+  "block.brass_geodes.topaz_gem_block": "Bloc de topaze ",
 
   "block.brass_geodes.budding_diamond": "Druse de diamant",
   "block.brass_geodes.budding_emerald": "Druse d'émeraude",

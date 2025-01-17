@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "minecraft:emerald"
+      "item": "minecraft:amethyst_shard"
     }
   },
   "pattern": [
@@ -12,7 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "brass_geodes:raw_emerald"
+    "item": "brass_geodes:amethyst_gem_block"
   },
   "show_notification": true
 }

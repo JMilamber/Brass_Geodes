@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "minecraft:amethyst_block"
+      "item": "brass_geodes:amethyst_gem_block"
     }
   ],
   "result": {

@@ -23,13 +23,12 @@ public class BGRecipeProvider extends RecipeProvider implements IConditionBuilde
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> recipeOutput) {
 
-        nineBlockStorageRecipes(recipeOutput, RecipeCategory.MISC, Items.AMETHYST_SHARD, RecipeCategory.BUILDING_BLOCKS, Blocks.AMETHYST_BLOCK);
-        nineBlockStorageRecipes(recipeOutput, RecipeCategory.MISC, BGItems.TOPAZ.get(), RecipeCategory.BUILDING_BLOCKS, BGBlocks.RAW_TOPAZ_BLOCK.get());
-        nineBlockStorageRecipes(recipeOutput, RecipeCategory.MISC, BGItems.SAPPHIRE.get(), RecipeCategory.BUILDING_BLOCKS, BGBlocks.RAW_SAPPHIRE_BLOCK.get());
-        nineBlockStorageRecipes(recipeOutput, RecipeCategory.MISC, BGItems.RUBY.get(), RecipeCategory.BUILDING_BLOCKS, BGBlocks.RAW_RUBY_BLOCK.get());
-        nineBlockStorageRecipes(recipeOutput, RecipeCategory.MISC, Items.EMERALD, RecipeCategory.BUILDING_BLOCKS, BGBlocks.RAW_EMERALD_BLOCK.get());
-        nineBlockStorageRecipes(recipeOutput, RecipeCategory.MISC, Items.DIAMOND, RecipeCategory.BUILDING_BLOCKS, BGBlocks.RAW_DIAMOND_BLOCK.get());
+        nineBlockStorageRecipes(recipeOutput, RecipeCategory.MISC, Items.AMETHYST_SHARD, RecipeCategory.BUILDING_BLOCKS, BGBlocks.AMETHYST_GEM_BLOCK.get());
+        nineBlockStorageRecipes(recipeOutput, RecipeCategory.MISC, BGItems.TOPAZ.get(), RecipeCategory.BUILDING_BLOCKS, BGBlocks.TOPAZ_GEM_BLOCK.get());
+        nineBlockStorageRecipes(recipeOutput, RecipeCategory.MISC, BGItems.SAPPHIRE.get(), RecipeCategory.BUILDING_BLOCKS, BGBlocks.SAPPHIRE_GEM_BLOCK.get());
+        nineBlockStorageRecipes(recipeOutput, RecipeCategory.MISC, BGItems.RUBY.get(), RecipeCategory.BUILDING_BLOCKS, BGBlocks.RUBY_GEM_BLOCK.get());
 
+        twoByTwoPacker(recipeOutput,  RecipeCategory.BUILDING_BLOCKS, Blocks.AMETHYST_BLOCK, Items.AMETHYST_SHARD);
         twoByTwoPacker(recipeOutput,  RecipeCategory.BUILDING_BLOCKS, BGBlocks.RAW_TOPAZ_BLOCK.get(), BGItems.TOPAZ.get());
         twoByTwoPacker(recipeOutput,  RecipeCategory.BUILDING_BLOCKS, BGBlocks.RAW_SAPPHIRE_BLOCK.get(), BGItems.SAPPHIRE.get());
         twoByTwoPacker(recipeOutput,  RecipeCategory.BUILDING_BLOCKS, BGBlocks.RAW_RUBY_BLOCK.get(), BGItems.RUBY.get());

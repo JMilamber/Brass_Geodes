@@ -3,10 +3,10 @@
   "item.brass_geodes.sapphire": "Sapphire",
   "item.brass_geodes.topaz": "Topaz",
 
-  "block.brass_geodes.amethyst_block" : "Amethyst Block",
-  "block.brass_geodes.ruby_block" : "Ruby Block",
-  "block.brass_geodes.sapphire_block": "Sapphire Block",
-  "block.brass_geodes.topaz_block": "Topaz Block ",
+  "block.brass_geodes.amethyst_gem_block" : "Amethyst Block",
+  "block.brass_geodes.ruby_gem_block" : "Ruby Block",
+  "block.brass_geodes.sapphire_gem_block": "Sapphire Block",
+  "block.brass_geodes.topaz_gem_block": "Topaz Block ",
 
   "block.brass_geodes.budding_diamond": "Budding Diamond",
   "block.brass_geodes.budding_emerald": "Budding Emerald",

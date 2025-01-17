@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "minecraft:diamond"
+      "item": "brass_geodes:ruby"
     }
   },
   "pattern": [
@@ -12,7 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "brass_geodes:raw_diamond"
+    "item": "brass_geodes:ruby_gem_block"
   },
   "show_notification": true
 }

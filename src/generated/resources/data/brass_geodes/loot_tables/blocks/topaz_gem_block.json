@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "brass_geodes:amethyst_block"
+          "name": "brass_geodes:topaz_gem_block"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "brass_geodes:blocks/amethyst_block"
+  "random_sequence": "brass_geodes:blocks/topaz_gem_block"
 }

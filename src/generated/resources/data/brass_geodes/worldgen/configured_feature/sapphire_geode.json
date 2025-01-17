@@ -66,9 +66,9 @@
       }
     },
     "crack": {
-      "base_crack_size": 2.0,
-      "crack_point_offset": 2,
-      "generate_crack_chance": 0.95
+      "base_crack_size": 1.0,
+      "crack_point_offset": 1,
+      "generate_crack_chance": 0.35
     },
     "distribution_points": {
       "type": "minecraft:uniform",
@@ -84,8 +84,8 @@
       "middle_layer": 3.2,
       "outer_layer": 4.2
     },
-    "max_gen_offset": 16,
-    "min_gen_offset": -16,
+    "max_gen_offset": 14,
+    "min_gen_offset": -14,
     "noise_multiplier": 0.05,
     "outer_wall_distance": {
       "type": "minecraft:uniform",
@@ -94,7 +94,7 @@
         "min_inclusive": 4
       }
     },
-    "placements_require_layer0_alternate": true,
+    "placements_require_layer0_alternate": false,
     "point_offset": {
       "type": "minecraft:uniform",
       "value": {

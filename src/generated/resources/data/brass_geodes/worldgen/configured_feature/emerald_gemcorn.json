@@ -33,26 +33,13 @@
     "minimum_size": {
       "type": "minecraft:two_layers_feature_size",
       "limit": 1,
-      "lower_size": 0,
-      "upper_size": 2
+      "lower_size": 1,
+      "upper_size": 1
     },
     "trunk_placer": {
-      "type": "minecraft:cherry_trunk_placer",
-      "base_height": 5,
-      "branch_count": 3,
-      "branch_end_offset_from_top": -1,
-      "branch_horizontal_length": {
-        "type": "minecraft:uniform",
-        "value": {
-          "max_inclusive": 2,
-          "min_inclusive": 2
-        }
-      },
-      "branch_start_offset_from_top": {
-        "max_inclusive": -2,
-        "min_inclusive": -3
-      },
-      "height_rand_a": 1,
+      "type": "brass_geodes:gemcorn_tree_trunk_placer",
+      "base_height": 9,
+      "height_rand_a": 0,
       "height_rand_b": 0
     },
     "trunk_provider": {
