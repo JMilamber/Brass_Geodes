@@ -77,7 +77,7 @@ public class BGBiomeModifiers {
                 GenerationStep.Decoration.LOCAL_MODIFICATIONS)
         );
         context.register(ADD_EMERALD_GEODE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_MOUNTAIN),
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placedFeatures.getOrThrow(BGPlacedFeatures.EMERALD_GEODE_PLACED_KEY)),
                 GenerationStep.Decoration.LOCAL_MODIFICATIONS)
         );
