@@ -43,11 +43,11 @@ public class BGPlacedFeatures {
         registerGemcornPlacedTree(context, EMERALD_GEMCORN_PLACED_KEY, configuredFeatures, BGConfiguredFeatures.EMERALD_GEMCORN_KEY, .25f, 48);
         registerGemcornPlacedTree(context, DIAMOND_GEMCORN_PLACED_KEY, configuredFeatures, BGConfiguredFeatures.DIAMOND_GEMCORN_KEY, .25f, 48);
         
-        registerPlacedGeode(context, TOPAZ_GEODE_PLACED_KEY, configuredFeatures, BGConfiguredFeatures.TOPAZ_GEODE_KEY, 64, 6, 30);
-        registerPlacedGeode(context, SAPPHIRE_GEODE_PLACED_KEY, configuredFeatures, BGConfiguredFeatures.SAPPHIRE_GEODE_KEY, 64, 6, 30);
-        registerPlacedGeode(context, RUBY_GEODE_PLACED_KEY, configuredFeatures, BGConfiguredFeatures.RUBY_GEODE_KEY, 64, 6, 30);
+        registerPlacedGeode(context, TOPAZ_GEODE_PLACED_KEY, configuredFeatures, BGConfiguredFeatures.TOPAZ_GEODE_KEY, 72, 6, 30);
+        registerPlacedGeode(context, SAPPHIRE_GEODE_PLACED_KEY, configuredFeatures, BGConfiguredFeatures.SAPPHIRE_GEODE_KEY, 72, 6, 30);
+        registerPlacedGeode(context, RUBY_GEODE_PLACED_KEY, configuredFeatures, BGConfiguredFeatures.RUBY_GEODE_KEY, 72, 6, 30);
         registerPlacedGeode(context, EMERALD_GEODE_PLACED_KEY, configuredFeatures, BGConfiguredFeatures.EMERALD_GEODE_KEY, 96, 9, 30);
-        registerPlacedGeode(context, DIAMOND_GEODE_PLACED_KEY, configuredFeatures, BGConfiguredFeatures.DIAMOND_GEODE_KEY, 96, -80, 80);
+        registerPlacedGeode(context, DIAMOND_GEODE_PLACED_KEY, configuredFeatures, BGConfiguredFeatures.DIAMOND_GEODE_KEY, 104, -80, 80);
 
     }
 
