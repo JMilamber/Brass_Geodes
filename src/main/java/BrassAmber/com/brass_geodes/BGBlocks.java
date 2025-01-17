@@ -38,29 +38,29 @@ public class BGBlocks {
     public static final RegistryObject<Block> SAPPHIRE_GEM_BLOCK = registerBlock("sapphire_gem_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).strength(5.0F, 6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> RUBY_GEM_BLOCK = registerBlock("ruby_gem_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).strength(5.0F, 6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> TOPAZ_CLUSTER = registerBlock("topaz_cluster", () -> new GemClusterBlock(7, 3, BlockBehaviour.Properties.of().noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F).lightLevel((p_152632_) -> 5)));
-    public static final RegistryObject<Block> SAPPHIRE_CLUSTER = registerBlock("sapphire_cluster", () -> new GemClusterBlock(7, 3, BlockBehaviour.Properties.of().noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F).lightLevel((p_152632_) -> 5)));
-    public static final RegistryObject<Block> RUBY_CLUSTER = registerBlock("ruby_cluster", () -> new GemClusterBlock(7, 3, BlockBehaviour.Properties.of().noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F).lightLevel((p_152632_) -> 5)));
-    public static final RegistryObject<Block> EMERALD_CLUSTER = registerBlock("emerald_cluster", () -> new GemClusterBlock(7, 3, BlockBehaviour.Properties.of().noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F).lightLevel((p_152632_) -> 5)));
-    public static final RegistryObject<Block> DIAMOND_CLUSTER = registerBlock("diamond_cluster", () -> new GemClusterBlock(7, 3, BlockBehaviour.Properties.of().noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F).lightLevel((p_152632_) -> 5)));
+    public static final RegistryObject<Block> TOPAZ_CLUSTER = registerBlock("topaz_cluster", () -> new GemClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).mapColor(MapColor.COLOR_ORANGE)));
+    public static final RegistryObject<Block> SAPPHIRE_CLUSTER = registerBlock("sapphire_cluster", () -> new GemClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).mapColor(MapColor.COLOR_BLUE)));
+    public static final RegistryObject<Block> RUBY_CLUSTER = registerBlock("ruby_cluster", () -> new GemClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).mapColor(MapColor.COLOR_RED)));
+    public static final RegistryObject<Block> EMERALD_CLUSTER = registerBlock("emerald_cluster", () -> new GemClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).mapColor(MapColor.EMERALD)));
+    public static final RegistryObject<Block> DIAMOND_CLUSTER = registerBlock("diamond_cluster", () -> new GemClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER).mapColor(MapColor.DIAMOND)));
 
-    public static final RegistryObject<Block> SMALL_TOPAZ_BUD = registerBlock("small_topaz_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(TOPAZ_CLUSTER.get()).sound(SoundType.SMALL_AMETHYST_BUD).lightLevel((p_152629_) -> 1)));
-    public static final RegistryObject<Block> SMALL_SAPPHIRE_BUD = registerBlock("small_sapphire_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(SAPPHIRE_CLUSTER.get()).sound(SoundType.SMALL_AMETHYST_BUD).lightLevel((p_152629_) -> 1)));
-    public static final RegistryObject<Block> SMALL_RUBY_BUD = registerBlock("small_ruby_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(RUBY_CLUSTER.get()).sound(SoundType.SMALL_AMETHYST_BUD).lightLevel((p_152629_) -> 1)));
-    public static final RegistryObject<Block> SMALL_EMERALD_BUD = registerBlock("small_emerald_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(EMERALD_CLUSTER.get()).sound(SoundType.SMALL_AMETHYST_BUD).lightLevel((p_152629_) -> 1)));
-    public static final RegistryObject<Block> SMALL_DIAMOND_BUD = registerBlock("small_diamond_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(DIAMOND_CLUSTER.get()).sound(SoundType.SMALL_AMETHYST_BUD).lightLevel((p_152629_) -> 1)));
+    public static final RegistryObject<Block> SMALL_TOPAZ_BUD = registerBlock("small_topaz_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.SMALL_AMETHYST_BUD).mapColor(MapColor.COLOR_ORANGE)));
+    public static final RegistryObject<Block> SMALL_SAPPHIRE_BUD = registerBlock("small_sapphire_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.SMALL_AMETHYST_BUD).mapColor(MapColor.COLOR_BLUE)));
+    public static final RegistryObject<Block> SMALL_RUBY_BUD = registerBlock("small_ruby_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.SMALL_AMETHYST_BUD).mapColor(MapColor.COLOR_RED)));
+    public static final RegistryObject<Block> SMALL_EMERALD_BUD = registerBlock("small_emerald_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.SMALL_AMETHYST_BUD).mapColor(MapColor.EMERALD)));
+    public static final RegistryObject<Block> SMALL_DIAMOND_BUD = registerBlock("small_diamond_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.SMALL_AMETHYST_BUD).mapColor(MapColor.DIAMOND)));
 
-    public static final RegistryObject<Block> MEDIUM_TOPAZ_BUD = registerBlock("medium_topaz_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(TOPAZ_CLUSTER.get()).sound(SoundType.MEDIUM_AMETHYST_BUD).lightLevel((p_152629_) -> 2)));
-    public static final RegistryObject<Block> MEDIUM_SAPPHIRE_BUD = registerBlock("medium_sapphire_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(SAPPHIRE_CLUSTER.get()).sound(SoundType.MEDIUM_AMETHYST_BUD).lightLevel((p_152629_) -> 2)));
-    public static final RegistryObject<Block> MEDIUM_RUBY_BUD = registerBlock("medium_ruby_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(RUBY_CLUSTER.get()).sound(SoundType.MEDIUM_AMETHYST_BUD).lightLevel((p_152629_) -> 2)));
-    public static final RegistryObject<Block> MEDIUM_EMERALD_BUD = registerBlock("medium_emerald_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(EMERALD_CLUSTER.get()).sound(SoundType.MEDIUM_AMETHYST_BUD).lightLevel((p_152629_) -> 2)));
-    public static final RegistryObject<Block> MEDIUM_DIAMOND_BUD = registerBlock("medium_diamond_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(DIAMOND_CLUSTER.get()).sound(SoundType.MEDIUM_AMETHYST_BUD).lightLevel((p_152629_) -> 2)));
+    public static final RegistryObject<Block> MEDIUM_TOPAZ_BUD = registerBlock("medium_topaz_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.MEDIUM_AMETHYST_BUD).mapColor(MapColor.COLOR_ORANGE)));
+    public static final RegistryObject<Block> MEDIUM_SAPPHIRE_BUD = registerBlock("medium_sapphire_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.MEDIUM_AMETHYST_BUD).mapColor(MapColor.COLOR_BLUE)));
+    public static final RegistryObject<Block> MEDIUM_RUBY_BUD = registerBlock("medium_ruby_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.MEDIUM_AMETHYST_BUD).mapColor(MapColor.COLOR_RED)));
+    public static final RegistryObject<Block> MEDIUM_EMERALD_BUD = registerBlock("medium_emerald_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.MEDIUM_AMETHYST_BUD).mapColor(MapColor.EMERALD)));
+    public static final RegistryObject<Block> MEDIUM_DIAMOND_BUD = registerBlock("medium_diamond_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.MEDIUM_AMETHYST_BUD).mapColor(MapColor.DIAMOND)));
 
-    public static final RegistryObject<Block> LARGE_TOPAZ_BUD = registerBlock("large_topaz_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(TOPAZ_CLUSTER.get()).sound(SoundType.LARGE_AMETHYST_BUD).lightLevel((p_152629_) -> 4)));
-    public static final RegistryObject<Block> LARGE_SAPPHIRE_BUD = registerBlock("large_sapphire_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(SAPPHIRE_CLUSTER.get()).sound(SoundType.LARGE_AMETHYST_BUD).lightLevel((p_152629_) -> 4)));
-    public static final RegistryObject<Block> LARGE_RUBY_BUD = registerBlock("large_ruby_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(RUBY_CLUSTER.get()).sound(SoundType.LARGE_AMETHYST_BUD).lightLevel((p_152629_) -> 4)));
-    public static final RegistryObject<Block> LARGE_EMERALD_BUD = registerBlock("large_emerald_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(EMERALD_CLUSTER.get()).sound(SoundType.LARGE_AMETHYST_BUD).lightLevel((p_152629_) -> 4)));
-    public static final RegistryObject<Block> LARGE_DIAMOND_BUD = registerBlock("large_diamond_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(DIAMOND_CLUSTER.get()).sound(SoundType.LARGE_AMETHYST_BUD).lightLevel((p_152629_) -> 4)));
+    public static final RegistryObject<Block> LARGE_TOPAZ_BUD = registerBlock("large_topaz_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD).mapColor(MapColor.COLOR_ORANGE)));
+    public static final RegistryObject<Block> LARGE_SAPPHIRE_BUD = registerBlock("large_sapphire_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD).mapColor(MapColor.COLOR_BLUE)));
+    public static final RegistryObject<Block> LARGE_RUBY_BUD = registerBlock("large_ruby_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD).mapColor(MapColor.COLOR_RED)));
+    public static final RegistryObject<Block> LARGE_EMERALD_BUD = registerBlock("large_emerald_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD).mapColor(MapColor.EMERALD)));
+    public static final RegistryObject<Block> LARGE_DIAMOND_BUD = registerBlock("large_diamond_bud", () -> new GemClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD).mapColor(MapColor.DIAMOND)));
 
     public static final RegistryObject<Block> BUDDING_TOPAZ = registerBlock("budding_topaz",
           () ->  new BuddingGemBlock(BlockBehaviour.Properties.of().randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops(),
@@ -82,7 +82,7 @@ public class BGBlocks {
     public static final RegistryObject<Block> GEMCORN_BRANCH = registerBlock("gemcorn_branch",
             () -> new GemcornBranch(5, 3, BlockBehaviour.Properties.of().mapColor(MapColor.STONE).replaceable().noCollission().instabreak().sound(SoundType.STONE).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> AMETHYST_BRANCH = registerBlock("amethyst_branch",
-            () -> new GemcornBranch(5, 3, BlockBehaviour.Properties.of().mapColor(MapColor.STONE).replaceable().noCollission().instabreak().sound(SoundType.AMETHYST_CLUSTER).pushReaction(PushReaction.DESTROY)));
+            () -> new GemcornBranch(5, 3, BlockBehaviour.Properties.of().replaceable().noCollission().instabreak().sound(SoundType.AMETHYST_CLUSTER).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> TOPAZ_BRANCH = registerBlock("topaz_branch",
             () -> new GemcornBranch(5, 3, BlockBehaviour.Properties.of().mapColor(MapColor.STONE).replaceable().noCollission().instabreak().sound(SoundType.AMETHYST_CLUSTER).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> SAPPHIRE_BRANCH = registerBlock("sapphire_branch",
