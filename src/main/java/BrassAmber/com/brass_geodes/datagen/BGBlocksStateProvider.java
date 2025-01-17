@@ -124,7 +124,6 @@ public class BGBlocksStateProvider extends BlockStateProvider {
                 block.get(),
                 models().cross(block.getId().getPath(), BrassGeodes.locate("block/gemcorn/" + block.getId().getPath())).renderType("cutout")
         );
-        blockItem(block);
     }
 
     private void clusterBlock(RegistryObject<Block> block) {
@@ -132,7 +131,6 @@ public class BGBlocksStateProvider extends BlockStateProvider {
                 block.get(),
                 models().cross(block.getId().getPath(), BrassGeodes.locate("block/" + block.getId().getPath()))
         );
-        blockItem(block);
     }
 
     private void simpleBlockWithItemFolder(RegistryObject<Block> block, String path) {

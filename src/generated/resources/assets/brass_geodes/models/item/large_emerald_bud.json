@@ -1,3 +1,6 @@
 {
-  "parent": "brass_geodes:block/large_emerald_bud"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "brass_geodes:block/large_emerald_bud"
+  }
 }

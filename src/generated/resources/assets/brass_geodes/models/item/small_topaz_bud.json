@@ -1,3 +1,6 @@
 {
-  "parent": "brass_geodes:block/small_topaz_bud"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "brass_geodes:block/small_topaz_bud"
+  }
 }

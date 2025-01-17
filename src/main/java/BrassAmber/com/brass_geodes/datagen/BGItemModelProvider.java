@@ -25,6 +25,38 @@ public class BGItemModelProvider extends ItemModelProvider {
         simpleItem(BGItems.RUBY);
         simpleItem(BGItems.PEARL);
 
+        simpleBlockItem(BGBlocks.TOPAZ_CLUSTER);
+        simpleBlockItem(BGBlocks.SAPPHIRE_CLUSTER);
+        simpleBlockItem(BGBlocks.RUBY_CLUSTER);
+        simpleBlockItem(BGBlocks.EMERALD_CLUSTER);
+        simpleBlockItem(BGBlocks.DIAMOND_CLUSTER);
+
+        simpleBlockItem(BGBlocks.SMALL_TOPAZ_BUD);
+        simpleBlockItem(BGBlocks.SMALL_SAPPHIRE_BUD);
+        simpleBlockItem(BGBlocks.SMALL_RUBY_BUD);
+        simpleBlockItem(BGBlocks.SMALL_EMERALD_BUD);
+        simpleBlockItem(BGBlocks.SMALL_DIAMOND_BUD);
+
+        simpleBlockItem(BGBlocks.MEDIUM_TOPAZ_BUD);
+        simpleBlockItem(BGBlocks.MEDIUM_SAPPHIRE_BUD);
+        simpleBlockItem(BGBlocks.MEDIUM_RUBY_BUD);
+        simpleBlockItem(BGBlocks.MEDIUM_EMERALD_BUD);
+        simpleBlockItem(BGBlocks.MEDIUM_DIAMOND_BUD);
+
+        simpleBlockItem(BGBlocks.LARGE_TOPAZ_BUD);
+        simpleBlockItem(BGBlocks.LARGE_SAPPHIRE_BUD);
+        simpleBlockItem(BGBlocks.LARGE_RUBY_BUD);
+        simpleBlockItem(BGBlocks.LARGE_EMERALD_BUD);
+        simpleBlockItem(BGBlocks.LARGE_DIAMOND_BUD);
+
+        simpleExtraFolderBlockItem(BGBlocks.GEMCORN_BRANCH, "gemcorn");
+        simpleExtraFolderBlockItem(BGBlocks.AMETHYST_BRANCH, "gemcorn");
+        simpleExtraFolderBlockItem(BGBlocks.TOPAZ_BRANCH, "gemcorn");
+        simpleExtraFolderBlockItem(BGBlocks.SAPPHIRE_BRANCH, "gemcorn");
+        simpleExtraFolderBlockItem(BGBlocks.RUBY_BRANCH, "gemcorn");
+        simpleExtraFolderBlockItem(BGBlocks.EMERALD_BRANCH, "gemcorn");
+        simpleExtraFolderBlockItem(BGBlocks.DIAMOND_BRANCH, "gemcorn");
+
         saplingItem(BGBlocks.AMETHYST_SAPLING);
         saplingItem(BGBlocks.TOPAZ_SAPLING);
         saplingItem(BGBlocks.SAPPHIRE_SAPLING);
@@ -53,10 +85,16 @@ public class BGItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(BrassGeodes.MOD_ID, "item/"+ folder + "/" + item.getId().getPath()));
     }
 
+    private ItemModelBuilder simpleExtraFolderBlockItem(RegistryObject<Block> item, String folder) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(BrassGeodes.MOD_ID, "block/"+ folder + "/" + item.getId().getPath()));
+    }
+
     private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(BrassGeodes.MOD_ID,"item/" + item.getId().getPath()));
+                new ResourceLocation(BrassGeodes.MOD_ID,"block/" + item.getId().getPath()));
     }
 
 }

@@ -1,3 +1,6 @@
 {
-  "parent": "brass_geodes:block/sapphire_branch"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "brass_geodes:block/gemcorn/sapphire_branch"
+  }
 }
